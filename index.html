@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vutshila Mashimbyi - Computer Science Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.min.js"></script>
+   
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h2>Loading Portfolio...</h2>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">VM</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">Vutshila Mashimbyi</h1>
+            <div class="hero-subtitle">
+                <span id="typed-text"></span>
+            </div>
+            <p class="hero-description">
+                Final year Computer Science student at the University of the Witwatersrand, passionate about full-stack development, 
+                data science, AI/ML, and cybersecurity. Combining analytical thinking with creative problem-solving to build 
+                innovative digital solutions.
+            </p>
+            <a href="#about" class="cta-button">Explore My Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">VM</div>
+            <div class="about-text">
+                <p>
+                    As a final year Computer Science student at the prestigious University of the Witwatersrand, I bring a unique blend 
+                    of technical expertise and leadership experience to every project. My journey through Wits' rigorous curriculum 
+                    has equipped me with deep knowledge in algorithms, data structures, software engineering, and modern development practices.
+                </p>
+                <p>
+                    Beyond coding, I've demonstrated leadership as a Scrum Master, guiding teams through complex software projects. 
+                    My passion lies in full-stack development, data science, and the fascinating world of AI and machine learning. 
+                    I'm currently expanding my expertise in cybersecurity to build more secure and robust applications.
+                </p>
+                <a href="#" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">View Academic Achievements →</a>
+            </div>
+        </div>
+        
+        <div class="traits">
+            <div class="trait-card">
+                <div class="trait-icon">🎯</div>
+                <h3>Analytical</h3>
+                <p>Breaking down complex problems into manageable solutions</p>
+            </div>
+            <div class="trait-card">
+                <div class="trait-icon">💡</div>
+                <h3>Innovative</h3>
+                <p>Constantly exploring new technologies and approaches</p>
+            </div>
+            <div class="trait-card">
+                <div class="trait-icon">🎨</div>
+                <h3>Creative</h3>
+                <p>Designing elegant solutions that merge form with function</p>
+            </div>
+            <div class="trait-card">
+                <div class="trait-icon">💪</div>
+                <h3>Hardworking</h3>
+                <p>Dedicated to excellence in every project undertaking</p>
+            </div>
+            <div class="trait-card">
+                <div class="trait-icon">🤝</div>
+                <h3>Team Player</h3>
+                <p>Collaborative approach to achieving shared goals</p>
+            </div>
+            <div class="trait-card">
+                <div class="trait-icon">👑</div>
+                <h3>Leader</h3>
+                <p>Experienced Scrum Master with proven leadership skills</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-item">
+                    <span>Java</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>C++</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>SQL</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Three.js</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Web Technologies</h3>
+                <div class="skill-item">
+                    <span>React/Next.js</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Node.js</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Firebase Storage</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Firestore</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data Science & AI</h3>
+                <div class="skill-item">
+                    <span>Pandas/NumPy</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Scikit-learn</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>TensorFlow</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Data Visualization</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Statistical Analysis</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Computer Science Fundamentals</h3>
+                <div class="skill-item">
+                    <span>Algorithms & Data Structures</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Software Engineering</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Database Systems</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Operating Systems</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Computer Networks</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Computer Graphics & Visualization</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Parallel Computing</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Technologies</h3>
+                <div class="skill-item">
+                    <span>Git/GitHub</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Docker</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>AWS/Cloud</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Linux/Unix</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Agile/Scrum</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cybersecurity (Learning)</h3>
+                <div class="skill-item">
+                    <span>Network Security</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Cryptography</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="60%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Penetration Testing</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="55%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Security Protocols</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="68%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Ethical Hacking</span>
+                    <div class="skill-bar"><div class="skill-progress" data-width="58%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Campus Dining Services Application</h3>
+                    <span>🍽️</span>
+                </div>
+                <p>A full-featured food services application designed to improve campus dining experiences. Students can browse dining alternatives, view real-time menus, book reservations, manage meal plans, and provide reviews.</p>
+                
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Firestore</span>
+                    <span class="tech-tag">Material UI</span>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/SeanWits/sdp_project" class="project-link">GitHub</a>
+                    <a href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/" class="project-link">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Nitro Assault Racing Game</h3>
+                    <span>🏎️</span>
+                </div>
+                <p>A time-trial racing game featuring dynamic obstacles, health management, and high-speed gameplay with realistic physics, multiple camera perspectives, and power-up systems.</p>
+                
+                <div class="project-tech">
+                    <span class="tech-tag">Three.js</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">WebGL</span>
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/refiloemopeloa/Nitro" class="project-link">GitHub</a>
+                    <a href="https://lamp.ms.wits.ac.za/~sonsite/" class="project-link">Play Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Constitutional Archive Management System</h3>
+                    <span>📚</span>
+                </div>
+                <p>A full-stack web application for managing and querying historical constitutional data with admin portal for data upload and public search interface with natural language processing.</p>
+                
+                <div class="project-tech">
+                    <span class="tech-tag">Vanilla JS</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">CI/CD</span>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/ARTMashimbyi/-ConstitutionVault" class="project-link">GitHub</a>
+                    <a href="https://delightful-pebble-09b2bca10.6.azurestaticapps.net/" class="project-link">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-date">2025</div>
+                <div class="experience-role">Bachelor of Science in Computer Science</div>
+                <div class="experience-company">University of the Witwatersrand</div>
+                <p>Final year Computer Science student with comprehensive education covering algorithms, data structures, software engineering, database systems, computer networks, operating systems, and artificial intelligence. Demonstrated excellence in multiple core subjects.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">2024</div>
+                <div class="experience-role">Computer Science Tutor</div>
+                <div class="experience-company">University of the Witwatersrand</div>
+                <p>Tutoring first and second year Computer Science students in programming fundamentals, data structures, and algorithms. Conducting tutorial sessions, assisting with assignments, and helping students develop problem-solving skills.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">2025</div>
+                <div class="experience-role">Scrum Master & Team Lead</div>
+                <div class="experience-company">Constitutional Archive Project - Wits University</div>
+                <p>Led a team of developers in creating a full-stack constitutional archive management system. Implemented Agile methodologies, managed sprints, and ensured project delivery within timeline. Coordinated between stakeholders and development team to deliver a functional product meeting all requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">
+                Ready to collaborate on exciting projects or discuss opportunities in tech? 
+                Let's build something amazing together!
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:artmashimbyi@gmail.com">artmashimbyi@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/vutshila-mashimbyi-87649b300" target="_blank">https://www.linkedin.com/in/vutshila-mashimbyi-87649b300</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/ARTMashimbyi" target="_blank">github.com/ARTMashimbyi</a>
+                </div>
+                
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <span>Johannesburg, South Africa</span>
+                </div>
+                
+              
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
