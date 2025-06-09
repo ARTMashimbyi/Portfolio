@@ -111,6 +111,21 @@ nav.scrolled {
     width: 100%;
 }
 
+
+.about-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 70%; /* for circular image */
+    overflow: hidden;
+    border: 5px solid var(--accent-color);
+  }
+  
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures image covers the space */
+  }
+
 /* Hero Section */
 .hero {
     height: 100vh;
