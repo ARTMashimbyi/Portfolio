@@ -6,6 +6,7 @@
     <title>Vutshila Mashimbyi - Computer Science Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
@@ -41,312 +42,291 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#academic">Academic</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <canvas id="hero-canvas"></canvas>
-      <div class="hero-content">
-        <h1 class="hero-title">Vutshila Mashimbyi</h1>
-        <div class="hero-subtitle">
-          <span id="typed-text"></span>
+      <!-- Animated Background -->
+      <div class="hero-background">
+        <div class="floating-shapes">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
         </div>
-        <p class="hero-description">
-          Final year Computer Science student at the University of the
-          Witwatersrand, passionate about full-stack development, data science,
-          AI/ML, and cybersecurity. Combining analytical thinking with creative
-          problem-solving to build innovative digital solutions.
-        </p>
-        <a href="#about" class="cta-button">Explore My Journey</a>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-badge">Computer Science Graduate</div>
+        <h1 class="hero-title">Vutshila Mashimbyi</h1>
+
+        <!-- Enhanced Professional Description -->
+        <div class="hero-description">
+          <p class="lead-text">
+            Computer Science Graduate from the University of the Witwatersrand |
+            Full-Stack Developer | Data Scientist
+          </p>
+
+          <p class="main-description">
+            As a Computer Science graduate from the University of the
+            Witwatersrand, I architect intelligent digital ecosystems that
+            bridge innovative technology with real-world impact. My expertise
+            spans full-stack development, data science, and artificial
+            intelligence, where I engineer sophisticated solutions by
+            synthesizing analytical precision with human-centered design
+            principles to address complex technological challenges and drive
+            meaningful innovation.
+          </p>
+
+          <div class="expertise-highlights">
+            <span class="expertise-tag">Full-Stack Architecture</span>
+            <span class="expertise-tag">Machine Learning</span>
+            <span class="expertise-tag">Data Analytics</span>
+            <span class="expertise-tag">Cloud Solutions</span>
+            <span class="expertise-tag">AI Systems</span>
+            <span class="expertise-tag">UX/UI Design</span>
+          </div>
+        </div>
+
+        <div class="cta-container">
+          <a href="#about" class="cta-button">Explore My Portfolio</a>
+          <a href="#contact" class="cta-button secondary">Get In Touch</a>
+        </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll to explore</span>
+        <div class="scroll-arrow"></div>
       </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-image">
-          <img src="img2.jpg" alt="Vutshila Mashimbyi" class="profile-img" />
-        </div>
-        <div class="about-text">
-          <p>
-            As a final year Computer Science student at the prestigious
-            University of the Witwatersrand, I bring a unique blend of technical
-            expertise and leadership experience to every project. My journey
-            through Wits' rigorous curriculum has equipped me with deep
-            knowledge in algorithms, data structures, software engineering, and
-            modern development practices.
-          </p>
-          <p>
-            Beyond coding, I've demonstrated leadership as a Scrum Master,
-            guiding teams through complex software projects. My passion lies in
-            full-stack development, data science, and the fascinating world of
-            AI and machine learning. I'm currently expanding my expertise in
-            cybersecurity to build more secure and robust applications.
-          </p>
-          <a href="mycv.pdf" class="cta-button" download>Download CV</a>
-        </div>
-      </div>
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              As a distinguished Computer Science graduate from the University
+              of the Witwatersrand, I possess a comprehensive foundation in
+              computational theory and practical software engineering. My
+              academic journey through Wits's rigorous curriculum has equipped
+              me with advanced expertise in algorithm design, data structures,
+              software architecture, and systems programming.
+            </p>
 
-      <div class="traits">
-        <div class="trait-card">
-          <div class="trait-icon">🎯</div>
-          <h3>Analytical</h3>
-          <p>Breaking down complex problems into manageable solutions</p>
+            <p>
+              My technical proficiency extends across the full software
+              development lifecycle, from conceptual design to deployment and
+              maintenance. I've mastered
+              <strong
+                >Object-Oriented Design patterns, Database Management Systems,
+                and Software Engineering methodologies</strong
+              >
+              through both academic training and practical application.
+            </p>
+
+            <p>
+              Beyond technical execution, I've cultivated strong leadership
+              capabilities as a <strong>Scrum Master</strong>, successfully
+              guiding cross-functional teams through complex software
+              development cycles. This leadership dimension complements my
+              technical expertise, allowing me to bridge the gap between
+              technical implementation and project management requirements.
+            </p>
+
+            <div class="technical-domains">
+              <div class="domain-category">
+                <h4>Core Technical Competencies</h4>
+                <ul>
+                  <li>Algorithm Design & Complexity Analysis</li>
+                  <li>Software Architecture & System Design</li>
+                  <li>Database Management & Optimization</li>
+                  <li>Full-Stack Development</li>
+                </ul>
+              </div>
+              <div class="domain-category">
+                <h4>Advanced Specializations</h4>
+                <ul>
+                  <li>Machine Learning & AI Systems</li>
+                  <li>Parallel & Distributed Computing</li>
+                  <li>Computer Networks & Security</li>
+                  <li>Data Science & Analytics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="trait-card">
-          <div class="trait-icon">💡</div>
-          <h3>Innovative</h3>
-          <p>Constantly exploring new technologies and approaches</p>
+
+        <div class="traits">
+          <div class="trait-card">
+            <div class="trait-icon">🎯</div>
+            <h3>Analytical</h3>
+            <p>Breaking down complex problems into manageable solutions</p>
+          </div>
+          <div class="trait-card">
+            <div class="trait-icon">💡</div>
+            <h3>Innovative</h3>
+            <p>Constantly exploring new technologies and approaches</p>
+          </div>
+          <div class="trait-card">
+            <div class="trait-icon">🎨</div>
+            <h3>Creative</h3>
+            <p>Designing elegant solutions that merge form with function</p>
+          </div>
+          <div class="trait-card">
+            <div class="trait-icon">💪</div>
+            <h3>Hardworking</h3>
+            <p>Dedicated to excellence in every project undertaking</p>
+          </div>
+          <div class="trait-card">
+            <div class="trait-icon">🤝</div>
+            <h3>Team Player</h3>
+            <p>Collaborative approach to achieving shared goals</p>
+          </div>
+          <div class="trait-card">
+            <div class="trait-icon">👑</div>
+            <h3>Leader</h3>
+            <p>Experienced Scrum Master with proven leadership skills</p>
+          </div>
         </div>
-        <div class="trait-card">
-          <div class="trait-icon">🎨</div>
-          <h3>Creative</h3>
-          <p>Designing elegant solutions that merge form with function</p>
-        </div>
-        <div class="trait-card">
-          <div class="trait-icon">💪</div>
-          <h3>Hardworking</h3>
-          <p>Dedicated to excellence in every project undertaking</p>
-        </div>
-        <div class="trait-card">
-          <div class="trait-icon">🤝</div>
-          <h3>Team Player</h3>
-          <p>Collaborative approach to achieving shared goals</p>
-        </div>
-        <div class="trait-card">
-          <div class="trait-icon">👑</div>
-          <h3>Leader</h3>
-          <p>Experienced Scrum Master with proven leadership skills</p>
+
+        <div class="about-cta">
+          <a href="CV.pdf" class="cta-button" download>Download CV</a>
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <div class="skill-item">
-            <span>Java</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-item">
+              <span>Java</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Python</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>C++</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>SQL</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
             </div>
           </div>
-          <div class="skill-item">
-            <span>Python</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>JavaScript</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="88%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>C++</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>SQL</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Three.js</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="skill-category">
-          <h3>Web Technologies</h3>
-          <div class="skill-item">
-            <span>React/Next.js</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+          <div class="skill-category">
+            <h3>Web Technologies</h3>
+            <div class="skill-item">
+              <span>React/Next.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Node.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="82%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>HTML/CSS</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="92%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Firebase</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80%"></div>
+              </div>
             </div>
           </div>
-          <div class="skill-item">
-            <span>Node.js</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="82%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>HTML/CSS</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Firebase Storage</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Firestore</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="78%"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="skill-category">
-          <h3>Data Science & AI</h3>
-          <div class="skill-item">
-            <span>Pandas/NumPy</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+          <div class="skill-category">
+            <h3>Data Science & AI</h3>
+            <div class="skill-item">
+              <span>Pandas/NumPy</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Scikit-learn</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>TensorFlow</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Data Visualization</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="82%"></div>
+              </div>
             </div>
           </div>
-          <div class="skill-item">
-            <span>Scikit-learn</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>TensorFlow</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Data Visualization</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="82%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Statistical Analysis</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="skill-category">
-          <h3>Computer Science Fundamentals</h3>
-          <div class="skill-item">
-            <span>Algorithms & Data Structures</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+          <div class="skill-category">
+            <h3>Tools & Technologies</h3>
+            <div class="skill-item">
+              <span>Git/GitHub</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90%"></div>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>Software Engineering</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="88%"></div>
+            <div class="skill-item">
+              <span>Docker</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75%"></div>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>Database Systems</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+            <div class="skill-item">
+              <span>AWS/Cloud</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="70%"></div>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>Operating Systems</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="82%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Computer Networks</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Computer Graphics & Visualization</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Parallel Computing</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70%"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Tools & Technologies</h3>
-          <div class="skill-item">
-            <span>Git/GitHub</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Docker</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>AWS/Cloud</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Linux/Unix</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Agile/Scrum</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="92%"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Cybersecurity (Learning)</h3>
-          <div class="skill-item">
-            <span>Network Security</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="65%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Cryptography</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="60%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Penetration Testing</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="55%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Security Protocols</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="68%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span>Ethical Hacking</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="58%"></div>
+            <div class="skill-item">
+              <span>Linux/Unix</span>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85%"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -355,105 +335,109 @@
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Campus Dining Services Application</h3>
-            <span>🍽️</span>
-          </div>
-          <p>
-            A full-featured food services application designed to improve campus
-            dining experiences. Students can browse dining alternatives, view
-            real-time menus, book reservations, manage meal plans, and provide
-            reviews.
-          </p>
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">Campus Dining Services Application</h3>
+              <span class="project-icon">🍽️</span>
+            </div>
+            <p>
+              A full-featured food services application designed to improve
+              campus dining experiences. Students can browse dining
+              alternatives, view real-time menus, book reservations, manage meal
+              plans, and provide reviews.
+            </p>
 
-          <div class="project-tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Firebase</span>
-            <span class="tech-tag">Firestore</span>
-            <span class="tech-tag">Material UI</span>
-          </div>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Firestore</span>
+              <span class="tech-tag">Material UI</span>
+            </div>
 
-          <div class="project-links">
-            <a
-              href="https://github.com/SeanWits/sdp_project"
-              class="project-link"
-              >GitHub</a
-            >
-            <a
-              href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/"
-              class="project-link"
-              >Live Demo</a
-            >
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Nitro Assault Racing Game</h3>
-            <span>🏎️</span>
-          </div>
-          <p>
-            A time-trial racing game featuring dynamic obstacles, health
-            management, and high-speed gameplay with realistic physics, multiple
-            camera perspectives, and power-up systems.
-          </p>
-
-          <div class="project-tech">
-            <span class="tech-tag">Three.js</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">WebGL</span>
-            <span class="tech-tag">HTML5</span>
-            <span class="tech-tag">CSS3</span>
+            <div class="project-links">
+              <a
+                href="https://github.com/SeanWits/sdp_project"
+                class="project-link"
+                >GitHub</a
+              >
+              <a
+                href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/"
+                class="project-link"
+                >Live Demo</a
+              >
+            </div>
           </div>
 
-          <div class="project-links">
-            <a
-              href="https://github.com/refiloemopeloa/Nitro"
-              class="project-link"
-              >GitHub</a
-            >
-            <a href="https://lamp.ms.wits.ac.za/~sonsite/" class="project-link"
-              >Play Demo</a
-            >
-          </div>
-        </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">Nitro Assault Racing Game</h3>
+              <span class="project-icon">🏎️</span>
+            </div>
+            <p>
+              A time-trial racing game featuring dynamic obstacles, health
+              management, and high-speed gameplay with realistic physics,
+              multiple camera perspectives, and power-up systems.
+            </p>
 
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">
-              Constitutional Archive Management System
-            </h3>
-            <span>📚</span>
-          </div>
-          <p>
-            A full-stack web application for managing and querying historical
-            constitutional data with admin portal for data upload and public
-            search interface with natural language processing.
-          </p>
+            <div class="project-tech">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">WebGL</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
 
-          <div class="project-tech">
-            <span class="tech-tag">Vanilla JS</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Azure</span>
-            <span class="tech-tag">REST API</span>
-            <span class="tech-tag">CI/CD</span>
+            <div class="project-links">
+              <a
+                href="https://github.com/refiloemopeloa/Nitro"
+                class="project-link"
+                >GitHub</a
+              >
+              <a
+                href="https://lamp.ms.wits.ac.za/~sonsite/"
+                class="project-link"
+                >Play Demo</a
+              >
+            </div>
           </div>
 
-          <div class="project-links">
-            <a
-              href="https://github.com/ARTMashimbyi/-ConstitutionVault"
-              class="project-link"
-              >GitHub</a
-            >
-            <a
-              href="https://delightful-pebble-09b2bca10.6.azurestaticapps.net/"
-              class="project-link"
-              >Live Demo</a
-            >
+          <div class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">
+                Constitutional Archive Management System
+              </h3>
+              <span class="project-icon">📚</span>
+            </div>
+            <p>
+              A full-stack web application for managing and querying historical
+              constitutional data with admin portal for data upload and public
+              search interface with natural language processing.
+            </p>
+
+            <div class="project-tech">
+              <span class="tech-tag">Vanilla JS</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">CI/CD</span>
+            </div>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/ARTMashimbyi/-ConstitutionVault"
+                class="project-link"
+                >GitHub</a
+              >
+              <a
+                href="https://delightful-pebble-09b2bca10.6.azurestaticapps.net/"
+                class="project-link"
+                >Live Demo</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -461,110 +445,416 @@
 
     <!-- Experience Section -->
     <section class="experience" id="experience">
-      <h2 class="section-title">Experience & Education</h2>
-      <div class="experience-timeline">
-        <div class="experience-item">
-          <div class="experience-date">2025</div>
-          <div class="experience-role">
-            Bachelor of Science in Computer Science
+      <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="experience-timeline">
+          <div class="experience-item">
+            <div class="experience-date">2025</div>
+            <div class="experience-role">
+              Bachelor of Science in Computer Science
+            </div>
+            <div class="experience-company">
+              University of the Witwatersrand
+            </div>
+            <p>
+              Final year Computer Science student with comprehensive education
+              covering algorithms, data structures, software engineering,
+              database systems, computer networks, operating systems, and
+              artificial intelligence. Demonstrated excellence in multiple core
+              subjects.
+            </p>
           </div>
-          <div class="experience-company">University of the Witwatersrand</div>
-          <p>
-            Final year Computer Science student with comprehensive education
-            covering algorithms, data structures, software engineering, database
-            systems, computer networks, operating systems, and artificial
-            intelligence. Demonstrated excellence in multiple core subjects.
-          </p>
-        </div>
 
-        <div class="experience-item">
-          <div class="experience-date">2024</div>
-          <div class="experience-role">Computer Science Tutor</div>
-          <div class="experience-company">University of the Witwatersrand</div>
-          <p>
-            Tutoring first and second year Computer Science students in
-            programming fundamentals, data structures, and algorithms.
-            Conducting tutorial sessions, assisting with assignments, and
-            helping students develop problem-solving skills.
-          </p>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-date">2025</div>
-          <div class="experience-role">Scrum Master & Team Lead</div>
-          <div class="experience-company">
-            Constitutional Archive Project - Wits University
+          <div class="experience-item">
+            <div class="experience-date">2024</div>
+            <div class="experience-role">Computer Science Tutor</div>
+            <div class="experience-company">
+              University of the Witwatersrand
+            </div>
+            <p>
+              Tutoring first and second year Computer Science students in
+              programming fundamentals, data structures, and algorithms.
+              Conducting tutorial sessions, assisting with assignments, and
+              helping students develop problem-solving skills.
+            </p>
           </div>
-          <p>
-            Led a team of developers in creating a full-stack constitutional
-            archive management system. Implemented Agile methodologies, managed
-            sprints, and ensured project delivery within timeline. Coordinated
-            between stakeholders and development team to deliver a functional
-            product meeting all requirements.
-          </p>
-        </div>
-        <div class="experience-item">
+
+          <div class="experience-item">
+            <div class="experience-date">2025</div>
+            <div class="experience-role">Scrum Master & Team Lead</div>
+            <div class="experience-company">
+              Constitutional Archive Project - Wits University
+            </div>
+            <p>
+              Led a team of developers in creating a full-stack constitutional
+              archive management system. Implemented Agile methodologies,
+              managed sprints, and ensured project delivery within timeline.
+              Coordinated between stakeholders and development team to deliver a
+              functional product meeting all requirements.
+            </p>
+          </div>
+          <div class="experience-item">
             <div class="experience-date">2025</div>
             <div class="experience-role">FNB App Academy Graduate</div>
             <div class="experience-company">First National Bank</div>
             <p>
-                Awarded a <strong>Certificate in Full Stack Development</strong> by the FNB App Academy in 2025, covering 32 credits of industry-relevant skills. The program offered comprehensive training in app strategies, GitHub collaboration, HTML-based app development, and the full Software Development Life Cycle (SDLC).
-                It also included hands-on experience with UX design, layout transitions, design thinking, APIs, data input and processing, backend development (including building APIs), and user-centric application design.
-                Business-focused modules included data management and analysis, AI in development, business funding strategies, and marketing for app-based businesses.
-                <br><br>
-                <a href="Vutshila_FNB.pdf" target="_blank">📄 View Certificate</a>
+              Awarded a
+              <strong>Certificate in Full Stack Development</strong> by the FNB
+              App Academy in 2025, covering 32 credits of industry-relevant
+              skills. The program offered comprehensive training in app
+              strategies, GitHub collaboration, HTML-based app development, and
+              the full Software Development Life Cycle (SDLC). It also included
+              hands-on experience with UX design, layout transitions, design
+              thinking, APIs, data input and processing, backend development
+              (including building APIs), and user-centric application design.
+              Business-focused modules included data management and analysis, AI
+              in development, business funding strategies, and marketing for
+              app-based businesses. <br /><br />
+              <a href="Vutshila_FNB.pdf" target="_blank">📄 View Certificate</a>
             </p>
+          </div>
         </div>
-        
+      </div>
+    </section>
+
+    <!-- Academic Foundation Section -->
+    <section class="academic-foundation" id="academic">
+      <div class="container">
+        <h2 class="section-title">Academic Foundation</h2>
+        <div class="academic-intro">
+          <p>
+            A comprehensive journey through the University of the
+            Witwatersrand's rigorous Computer Science curriculum, providing deep
+            theoretical understanding and practical implementation skills across
+            fundamental and advanced computing concepts.
+          </p>
+        </div>
+
+        <div class="academic-grid">
+          <!-- Basic Computer Organisation -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Basic Computer Organisation</h3>
+              <div class="course-code">COMS1015A/1019A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Computer Architecture:</strong> Von Neumann
+                    architecture, fetch-execute cycle, CPU components, memory
+                    hierarchy
+                  </li>
+                  <li>
+                    <strong>Number Systems:</strong> Binary, octal, hexadecimal
+                    conversions, signed number representations (two's
+                    complement)
+                  </li>
+                  <li>
+                    <strong>Data Representation:</strong> ASCII, Unicode,
+                    floating-point representation (IEEE 754), data compression
+                    algorithms
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design and analyze digital logic circuits for specific
+                    computational tasks
+                  </li>
+                  <li>
+                    Implement algorithms in assembly language with proper memory
+                    management
+                  </li>
+                  <li>
+                    Convert between number systems and perform arithmetic in
+                    different bases
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Structures & Algorithms -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Data Structures & Algorithms</h3>
+              <div class="course-code">COMS1017A/1021A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Linear Structures:</strong> Arrays, dynamic arrays,
+                    linked lists (singly, doubly, circular), stacks, queues,
+                    deques
+                  </li>
+                  <li>
+                    <strong>Tree Structures:</strong> Binary trees, BST, AVL
+                    trees, B-trees, heap structures, trie structures
+                  </li>
+                  <li>
+                    <strong>Graph Algorithms:</strong> Graph representations,
+                    BFS, DFS, Dijkstra's algorithm, minimum spanning trees
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Implement and analyze complex data structures with optimal
+                    time/space characteristics
+                  </li>
+                  <li>
+                    Select appropriate data structures for specific problem
+                    domains and constraints
+                  </li>
+                  <li>
+                    Design algorithms using dynamic programming and greedy
+                    approaches
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Computer Networks -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Computer Networks</h3>
+              <div class="course-code">COMS2014A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Network Architecture:</strong> OSI model, TCP/IP
+                    protocol suite, layered communication principles
+                  </li>
+                  <li>
+                    <strong>Application Layer:</strong> HTTP/HTTPS, DNS, SMTP,
+                    FTP, web architecture, REST APIs
+                  </li>
+                  <li>
+                    <strong>Transport Layer:</strong> TCP congestion control,
+                    flow control, UDP protocols, socket programming
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design and implement network applications using socket
+                    programming
+                  </li>
+                  <li>
+                    Analyze network traffic and troubleshoot network
+                    connectivity issues
+                  </li>
+                  <li>
+                    Configure network devices and understand routing protocol
+                    operations
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database Fundamentals -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Database Fundamentals</h3>
+              <div class="course-code">COMS2002A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Database Design:</strong> Entity-Relationship
+                    modeling, normalization (1NF-3NF, BCNF), database schema
+                    design
+                  </li>
+                  <li>
+                    <strong>SQL Programming:</strong> DDL, DML, complex queries,
+                    joins, subqueries, views, stored procedures
+                  </li>
+                  <li>
+                    <strong>Transaction Management:</strong> ACID properties,
+                    concurrency control, locking protocols, recovery systems
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design normalized database schemas using ER modeling and
+                    normalization theory
+                  </li>
+                  <li>
+                    Write complex SQL queries for data retrieval, manipulation,
+                    and analysis
+                  </li>
+                  <li>
+                    Implement transaction management with proper concurrency
+                    control
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Analysis of Algorithms -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Advanced Analysis of Algorithms</h3>
+              <div class="course-code">COMS2015A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Algorithmic Paradigms:</strong> Divide and conquer,
+                    dynamic programming, greedy algorithms, backtracking
+                  </li>
+                  <li>
+                    <strong>Complexity Theory:</strong> P, NP, NP-complete,
+                    NP-hard classes, reduction techniques, Cook's theorem
+                  </li>
+                  <li>
+                    <strong>Graph Algorithms:</strong> Maximum flow, minimum
+                    cut, matching algorithms, planar graph algorithms
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design and analyze advanced algorithms for complex
+                    computational problems
+                  </li>
+                  <li>
+                    Prove NP-completeness through polynomial-time reductions
+                  </li>
+                  <li>
+                    Implement approximation algorithms with proven performance
+                    bounds
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine Learning -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Machine Learning</h3>
+              <div class="course-code">COMS3007</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Supervised Learning:</strong> Linear regression,
+                    logistic regression, SVM, decision trees, random forests
+                  </li>
+                  <li>
+                    <strong>Unsupervised Learning:</strong> K-means clustering,
+                    hierarchical clustering, PCA, anomaly detection
+                  </li>
+                  <li>
+                    <strong>Neural Networks:</strong> Perceptrons, multi-layer
+                    networks, backpropagation, deep learning architectures
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Implement and evaluate various machine learning algorithms
+                    using Python libraries
+                  </li>
+                  <li>
+                    Preprocess and engineer features for optimal model
+                    performance
+                  </li>
+                  <li>
+                    Design neural network architectures for specific problem
+                    domains
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-      <div class="contact-content">
-        <h2 class="section-title">Let's Connect</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 40px">
-          Ready to collaborate on exciting projects or discuss opportunities in
-          tech? Let's build something amazing together!
-        </p>
+      <div class="container">
+        <div class="contact-content">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="contact-subtitle">
+            Ready to collaborate on exciting projects or discuss opportunities
+            in tech? Let's build something amazing together!
+          </p>
 
-        <div class="contact-grid">
-
+          <div class="contact-grid">
             <a class="contact-item" href="mailto:artmashimbyi@gmail.com">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <p>artmashimbyi@gmail.com</p>
+              <div class="contact-icon">📧</div>
+              <h3>Email</h3>
+              <p>artmashimbyi@gmail.com</p>
             </a>
-        
-            <a class="contact-item" href="https://www.linkedin.com/in/vutshila-mashimbyi-87649b300" target="_blank">
-                <div class="contact-icon">💼</div>
-                <h3>LinkedIn</h3>
-                <p>linkedin.com/in/vutshila-mashimbyi-87649b300</p>
+
+            <a
+              class="contact-item"
+              href="https://www.linkedin.com/in/vutshila-mashimbyi-87649b300"
+              target="_blank"
+            >
+              <div class="contact-icon">💼</div>
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/vutshila-mashimbyi-87649b300</p>
             </a>
-        
-            <a class="contact-item" href="https://github.com/ARTMashimbyi" target="_blank">
-                <div class="contact-icon">💻</div>
-                <h3>GitHub</h3>
-                <p>github.com/ARTMashimbyi</p>
+
+            <a
+              class="contact-item"
+              href="https://github.com/ARTMashimbyi"
+              target="_blank"
+            >
+              <div class="contact-icon">💻</div>
+              <h3>GitHub</h3>
+              <p>github.com/ARTMashimbyi</p>
             </a>
-        
+
             <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <h3>Location</h3>
-                <p>Johannesburg, South Africa</p>
+              <div class="contact-icon">📍</div>
+              <h3>Location</h3>
+              <p>Johannesburg, South Africa</p>
             </div>
-        
-            <a class="contact-item" href="mycv.pdf" target="_blank">
-                <div class="contact-icon">🧾</div>
-                <h3>View MY CV →</h3>
-                <p>Vutshila Mashimbyi's CV</p>
+
+            <a class="contact-item" href="CV.pdf" target="_blank">
+              <div class="contact-icon">🧾</div>
+              <h3>View MY CV →</h3>
+              <p>Vutshila Mashimbyi's CV</p>
             </a>
-        
+          </div>
         </div>
-        
-      
+      </div>
     </section>
 
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
