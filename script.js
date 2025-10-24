@@ -533,3 +533,74 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Academic Foundation Toggle with Enhanced UX
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggleAcademic");
+  const academicWrapper = document.querySelector(".academic-grid-wrapper");
+  const hiddenCards = document.querySelectorAll(".academic-hidden");
+  let isExpanded = false;
+
+  if (toggleButton && academicWrapper) {
+    // Count hidden items for the button text
+    const hiddenCount = hiddenCards.length;
+
+    // Update button text with count
+    toggleButton.textContent = `View All Academic Courses (${hiddenCount} more)`;
+
+    toggleButton.addEventListener("click", function () {
+      isExpanded = !isExpanded;
+
+      // Toggle expanded class
+      academicWrapper.classList.toggle("expanded", isExpanded);
+
+      // Show/hide hidden cards with animation
+      hiddenCards.forEach((card, index) => {
+        if (isExpanded) {
+          setTimeout(() => {
+            card.style.display = "block";
+          }, index * 100); // Stagger animation
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Update button text
+      toggleButton.textContent = isExpanded
+        ? "Show Less Courses"
+        : `View All Academic Courses (${hiddenCount} more)`;
+
+      // Update hint text
+      const hint = document.querySelector(".academic-hint span:last-child");
+      if (hint) {
+        hint.textContent = isExpanded
+          ? "All courses are now visible"
+          : "Click to explore all 12 courses";
+      }
+
+      // Scroll to maintain context
+      if (!isExpanded) {
+        setTimeout(() => {
+          academicWrapper.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 300);
+      }
+    });
+
+    // Add intersection observer to show hint only when needed
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isExpanded) {
+            // Hint is already visible in this design
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(academicWrapper);
+  }
+});
