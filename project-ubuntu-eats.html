@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ubuntu Eats - Food Waste Reduction Platform</title>
+    <style>
+      :root {
+        --primary: #27ae60;
+        --primary-dark: #219653;
+        --secondary: #f39c12;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --text: #34495e;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .back-button {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) translateX(-5px);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        border-bottom: 2px solid var(--secondary);
+        padding-bottom: 0.5rem;
+        margin-top: 2rem;
+        color: var(--primary-dark);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .role-grid,
+      .feature-grid,
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .card {
+        background: var(--light);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: var(--transition);
+        border-left: 4px solid var(--primary);
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      .card h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .impact-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .metric-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border-top: 4px solid var(--secondary);
+      }
+
+      .metric-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin: 0.5rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .link-card {
+        flex: 1;
+        min-width: 200px;
+        background: var(--light);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .link-card:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .link-card a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+
+      th,
+      td {
+        padding: 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .feature-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .feature-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .feature-list li:before {
+        content: "✓";
+        color: var(--primary);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .phase-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .phase {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .phase-number {
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .phase-content {
+        flex: 1;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .quote {
+        font-style: italic;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        border-left: 4px solid var(--secondary);
+        background: #f8f9fa;
+      }
+
+      .challenge-box {
+        background: #fff8e1;
+        border-left: 4px solid var(--secondary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .solution-box {
+        background: #e8f5e9;
+        border-left: 4px solid var(--primary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .role-grid,
+        .feature-grid,
+        .tech-grid,
+        .impact-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .links {
+          flex-direction: column;
+        }
+
+        .back-button {
+          position: relative;
+          left: 0;
+          top: 0;
+          transform: none;
+          margin-bottom: 1rem;
+          align-self: flex-start;
+        }
+
+        header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <button class="back-button" onclick="goBack()">
+        <span>←</span> Back
+      </button>
+      <div class="container">
+        <h1>Ubuntu Eats</h1>
+        <p class="tagline">Connecting Food Surplus with Community Needs</p>
+        <p>Hackathon Project Report | October 20, 2025</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="section">
+        <h2>Executive Summary</h2>
+        <p>
+          Ubuntu Eats is an innovative food redistribution platform designed to
+          combat food waste and address food insecurity. The application
+          connects food donors (restaurants, supermarkets, individuals) with
+          recipients (NGOs, charities, volunteers) to ensure surplus food
+          reaches those in need rather than going to waste.
+        </p>
+
+        <div class="quote">
+          "Approximately one-third of all food produced worldwide goes to waste
+          while millions face food insecurity. Ubuntu Eats addresses this
+          paradox by creating a digital marketplace for surplus food
+          redistribution."
+        </div>
+
+        <h3>Key Features</h3>
+        <div class="feature-grid">
+          <div class="card">
+            <h4>Food Donation Portal</h4>
+            <p>
+              Streamlined interface for donors to list surplus food with images,
+              descriptions, and pickup details
+            </p>
+          </div>
+          <div class="card">
+            <h4>Real-time Matching System</h4>
+            <p>
+              Intelligent matching of food donations with nearby NGOs and
+              volunteers
+            </p>
+          </div>
+          <div class="card">
+            <h4>Integrated Chat System</h4>
+            <p>Secure real-time messaging between donors and recipients</p>
+          </div>
+          <div class="card">
+            <h4>Volunteer Delivery Management</h4>
+            <p>Complete workflow for volunteer food transportation</p>
+          </div>
+          <div class="card">
+            <h4>Multi-role Dashboard</h4>
+            <p>
+              Tailored interfaces for donors, NGOs, volunteers, and
+              administrators
+            </p>
+          </div>
+          <div class="card">
+            <h4>Smart Routing</h4>
+            <p>
+              Integrated maps with route optimization for efficient food
+              delivery
+            </p>
+          </div>
+        </div>
+
+        <h3>Hackathon Impact</h3>
+        <div class="impact-metrics">
+          <div class="metric-card">
+            <h4>Real-time Matching</h4>
+            <div class="metric-value">✓</div>
+            <p>Food redistribution matching</p>
+          </div>
+          <div class="metric-card">
+            <h4>Waste Reduction</h4>
+            <div class="metric-value">✓</div>
+            <p>Immediate surplus allocation</p>
+          </div>
+          <div class="metric-card">
+            <h4>Volunteer Coordination</h4>
+            <div class="metric-value">✓</div>
+            <p>Streamlined delivery management</p>
+          </div>
+          <div class="metric-card">
+            <h4>Transparent Tracking</h4>
+            <div class="metric-value">✓</div>
+            <p>Donation tracking system</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>User Role System</h2>
+        <p>
+          The platform supports four distinct user roles, each with tailored
+          interfaces and capabilities:
+        </p>
+
+        <div class="role-grid">
+          <div class="card">
+            <h4>Donors</h4>
+            <p>Restaurants, supermarkets, and individuals with surplus food</p>
+            <ul class="feature-list">
+              <li>Food listing creation</li>
+              <li>Image upload with drag-and-drop</li>
+              <li>Real-time status tracking</li>
+              <li>Chat with claimers</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>NGOs/Recipients</h4>
+            <p>Charities and organizations serving communities in need</p>
+            <ul class="feature-list">
+              <li>Browse available donations</li>
+              <li>Real-time claiming system</li>
+              <li>Filtering and search capabilities</li>
+              <li>Integrated chat with donors</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Volunteers</h4>
+            <p>Individuals helping with food transportation</p>
+            <ul class="feature-list">
+              <li>Available delivery opportunities</li>
+              <li>Route planning assistance</li>
+              <li>Delivery status management</li>
+              <li>Navigation integration</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Administrators</h4>
+            <p>Platform oversight and management</p>
+            <ul class="feature-list">
+              <li>Donation approval system</li>
+              <li>User management</li>
+              <li>Platform analytics</li>
+              <li>System monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Technical Architecture</h2>
+
+        <h3>Frontend Architecture</h3>
+        <div class="tech-grid">
+          <div class="card">
+            <h4>React.js 18+</h4>
+            <p>Functional Components with Hooks</p>
+          </div>
+          <div class="card">
+            <h4>Role-based Routing</h4>
+            <p>React Router for navigation</p>
+          </div>
+          <div class="card">
+            <h4>Real-time State Management</h4>
+            <p>Firebase Integration</p>
+          </div>
+          <div class="card">
+            <h4>Google Maps API</h4>
+            <p>Map integration and routing</p>
+          </div>
+        </div>
+
+        <h3>Backend Architecture</h3>
+        <div class="tech-grid">
+          <div class="card">
+            <h4>Firebase Ecosystem</h4>
+            <p>Complete backend solution</p>
+          </div>
+          <div class="card">
+            <h4>Firestore Database</h4>
+            <p>NoSQL database for real-time data</p>
+          </div>
+          <div class="card">
+            <h4>Firebase Authentication</h4>
+            <p>Secure user management</p>
+          </div>
+          <div class="card">
+            <h4>Cloud Functions</h4>
+            <p>Serverless backend with Node.js</p>
+          </div>
+        </div>
+
+        <h3>Database Design</h3>
+        <p>
+          The Firestore database is structured around collections that support
+          the platform's core functionality:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Collection</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>users</td>
+              <td>User profiles and preferences</td>
+            </tr>
+            <tr>
+              <td>foodListings</td>
+              <td>Active donation listings</td>
+            </tr>
+            <tr>
+              <td>claims</td>
+              <td>Donation claims and status</td>
+            </tr>
+            <tr>
+              <td>chatRooms</td>
+              <td>Real-time messaging</td>
+            </tr>
+            <tr>
+              <td>deliveryAssignments</td>
+              <td>Volunteer coordination</td>
+            </tr>
+            <tr>
+              <td>adminLogs</td>
+              <td>Administrative actions</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Development Process</h2>
+
+        <h3>Agile Methodology</h3>
+        <p>
+          We adopted an Agile development methodology with Scrum practices,
+          enabling rapid iteration and continuous feedback integration.
+        </p>
+
+        <h3>Sprint Structure</h3>
+        <div class="phase-timeline">
+          <div class="phase">
+            <div class="phase-number">1</div>
+            <div class="phase-content">
+              <h4>Sprint 1: Foundation</h4>
+              <p>
+                Core authentication and user management system implementation
+              </p>
+            </div>
+          </div>
+          <div class="phase">
+            <div class="phase-number">2</div>
+            <div class="phase-content">
+              <h4>Sprint 2: Core Features</h4>
+              <p>Donation listing and basic claiming system development</p>
+            </div>
+          </div>
+          <div class="phase">
+            <div class="phase-number">3</div>
+            <div class="phase-content">
+              <h4>Sprint 3: Communication</h4>
+              <p>Real-time chat and volunteer coordination implementation</p>
+            </div>
+          </div>
+          <div class="phase">
+            <div class="phase-number">4</div>
+            <div class="phase-content">
+              <h4>Sprint 4: Polish</h4>
+              <p>Integration, testing, and performance optimization</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Challenges and Solutions</h2>
+
+        <h3>Technical Challenges</h3>
+
+        <div class="challenge-box">
+          <h4>Real-time Chat Synchronization</h4>
+          <p>
+            <strong>Challenge:</strong> Ensuring consistent message delivery and
+            ordering across multiple clients with optimistic updates.
+          </p>
+        </div>
+        <div class="solution-box">
+          <h4>Solution</h4>
+          <p>
+            Implemented sophisticated caching strategy with message
+            deduplication and timestamp-based sorting.
+          </p>
+        </div>
+
+        <div class="challenge-box">
+          <h4>Geolocation and Routing</h4>
+          <p>
+            <strong>Challenge:</strong> Providing accurate routing information
+            when Google Directions API is unavailable.
+          </p>
+        </div>
+        <div class="solution-box">
+          <h4>Solution</h4>
+          <p>
+            Developed fallback route approximation algorithm with realistic road
+            simulation.
+          </p>
+        </div>
+
+        <div class="challenge-box">
+          <h4>Image Upload Performance</h4>
+          <p>
+            <strong>Challenge:</strong> Handling large image files efficiently
+            on mobile devices.
+          </p>
+        </div>
+        <div class="solution-box">
+          <h4>Solution</h4>
+          <p>
+            Implemented client-side compression and progressive upload with
+            preview generation.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Future Roadmap</h2>
+
+        <h3>Immediate Improvements (0-3 months)</h3>
+        <ul class="feature-list">
+          <li>Push notifications for time-sensitive actions</li>
+          <li>Advanced filtering and search capabilities</li>
+          <li>Bulk donation management tools</li>
+          <li>Enhanced reporting and analytics</li>
+        </ul>
+
+        <h3>Long-term Vision (1-2 years)</h3>
+        <ul class="feature-list">
+          <li>Machine learning for donation matching optimization</li>
+          <li>Mobile app development for improved field usage</li>
+          <li>Integration with existing food bank systems</li>
+          <li>Expansion to commercial food redistribution</li>
+          <li>Blockchain integration for donation tracking</li>
+        </ul>
+
+        <h3>Impact Potential</h3>
+        <p>Ubuntu Eats has significant potential to:</p>
+        <div class="impact-metrics">
+          <div class="metric-card">
+            <h4>Reduce Food Waste</h4>
+            <p>Through efficient redistribution</p>
+          </div>
+          <div class="metric-card">
+            <h4>Support Communities</h4>
+            <p>With reliable food access</p>
+          </div>
+          <div class="metric-card">
+            <h4>Engage Volunteers</h4>
+            <p>Creating meaningful opportunities</p>
+          </div>
+          <div class="metric-card">
+            <h4>Provide Insights</h4>
+            <p>Data for waste reduction strategies</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Project Links</h2>
+        <div class="links">
+          <div class="link-card">
+            <a href="https://github.com/UBUNTU-EATS/Ubuntu" target="_blank"
+              >Source Code</a
+            >
+          </div>
+          <div class="link-card">
+            <a href="#" target="_blank">Live Demo</a>
+          </div>
+          <div class="link-card">
+            <a href="#" target="_blank">Documentation</a>
+          </div>
+          <div class="link-card">
+            <a href="#" target="_blank">Project Presentation</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <h3>Ubuntu Eats</h3>
+        <p>Connecting Food Surplus with Community Needs</p>
+        <p>Hackathon Project | October 2025</p>
+      </div>
+    </footer>
+
+    <script>
+      function goBack() {
+        // Go back to the previous page in browser history
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

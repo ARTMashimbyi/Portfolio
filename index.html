@@ -156,7 +156,7 @@
                 </ul>
               </div>
               <div class="domain-category">
-                <h4>Advanced Specializations</h4>
+                <h4>Learning & Specializations</h4>
                 <ul>
                   <li>Machine Learning & AI Systems</li>
                   <li>Parallel & Distributed Computing</li>
@@ -334,114 +334,166 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">Campus Dining Services Application</h3>
-              <span class="project-icon">🍽️</span>
-            </div>
-            <p>
-              A full-featured food services application designed to improve
-              campus dining experiences. Students can browse dining
-              alternatives, view real-time menus, book reservations, manage meal
-              plans, and provide reviews.
-            </p>
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-instructions">
+      <p>Click on any project card to view more details</p>
+    </div>
+    <div class="projects-grid">
+      <!-- Campus Dining Services Application -->
+      <div class="project-card" data-project="campus-dining">
+        <div class="project-header">
+          <h3 class="project-title">Campus Dining Services Application</h3>
+          <span class="project-icon">🍽️</span>
+        </div>
+        <p>
+          A full-featured food services application designed to improve
+          campus dining experiences. Students can browse dining
+          alternatives, view real-time menus, book reservations, manage meal
+          plans, and provide reviews.
+        </p>
 
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">Firestore</span>
-              <span class="tech-tag">Material UI</span>
-            </div>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Firestore</span>
+          <span class="tech-tag">Material UI</span>
+        </div>
 
-            <div class="project-links">
-              <a
-                href="https://github.com/SeanWits/sdp_project"
-                class="project-link"
-                >GitHub</a
-              >
-              <a
-                href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/"
-                class="project-link"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">Nitro Assault Racing Game</h3>
-              <span class="project-icon">🏎️</span>
-            </div>
-            <p>
-              A time-trial racing game featuring dynamic obstacles, health
-              management, and high-speed gameplay with realistic physics,
-              multiple camera perspectives, and power-up systems.
-            </p>
-
-            <div class="project-tech">
-              <span class="tech-tag">Three.js</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">WebGL</span>
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-            </div>
-
-            <div class="project-links">
-              <a
-                href="https://github.com/refiloemopeloa/Nitro"
-                class="project-link"
-                >GitHub</a
-              >
-              <a
-                href="https://lamp.ms.wits.ac.za/~sonsite/"
-                class="project-link"
-                >Play Demo</a
-              >
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">
-                Constitutional Archive Management System
-              </h3>
-              <span class="project-icon">📚</span>
-            </div>
-            <p>
-              A full-stack web application for managing and querying historical
-              constitutional data with admin portal for data upload and public
-              search interface with natural language processing.
-            </p>
-
-            <div class="project-tech">
-              <span class="tech-tag">Vanilla JS</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Azure</span>
-              <span class="tech-tag">REST API</span>
-              <span class="tech-tag">CI/CD</span>
-            </div>
-
-            <div class="project-links">
-              <a
-                href="https://github.com/ARTMashimbyi/-ConstitutionVault"
-                class="project-link"
-                >GitHub</a
-              >
-              <a
-                href="https://delightful-pebble-09b2bca10.6.azurestaticapps.net/"
-                class="project-link"
-                >Live Demo</a
-              >
-            </div>
-          </div>
+        <div class="project-links">
+          <a
+            href="https://github.com/SeanWits/sdp_project"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >GitHub</a
+          >
+          <a
+            href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >Live Demo</a
+          >
         </div>
       </div>
-    </section>
+
+      <!-- Nitro Assault Racing Game -->
+      <div class="project-card" data-project="nitro-assault">
+        <div class="project-header">
+          <h3 class="project-title">Nitro Assault Racing Game</h3>
+          <span class="project-icon">🏎️</span>
+        </div>
+        <p>
+          A time-trial racing game featuring dynamic obstacles, health
+          management, and high-speed gameplay with realistic physics,
+          multiple camera perspectives, and power-up systems.
+        </p>
+
+        <div class="project-tech">
+          <span class="tech-tag">Three.js</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">WebGL</span>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/refiloemopeloa/Nitro"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >GitHub</a
+          >
+          <a
+            href="https://lamp.ms.wits.ac.za/~sonsite/"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >Play Demo</a
+          >
+        </div>
+      </div>
+
+
+
+      <!-- Ubuntu Eats - Food Waste Reduction Platform -->
+<div class="project-card" data-project="ubuntu-eats">
+  <div class="project-header">
+    <h3 class="project-title">Ubuntu Eats - Food Waste Reduction Platform</h3>
+    <span class="project-icon">🌍</span>
+  </div>
+  <p>
+    An innovative food redistribution platform connecting donors with NGOs and volunteers
+    to combat food waste and address food insecurity through real-time matching,
+    integrated chat, and smart routing systems.
+  </p>
+
+  <div class="project-tech">
+    <span class="tech-tag">React</span>
+    <span class="tech-tag">Firebase</span>
+    <span class="tech-tag">Firestore</span>
+    <span class="tech-tag">Google Maps API</span>
+    <span class="tech-tag">Node.js</span>
+  </div>
+
+  <div class="project-links">
+    <a
+      href="https://github.com/UBUNTU-EATS/Ubuntu"
+      class="project-link"
+      onclick="event.stopPropagation()"
+      >GitHub</a
+    >
+    <a
+      href="#"
+      class="project-link"
+      onclick="event.stopPropagation()"
+      >Live Demo</a
+    >
+  </div>
+</div>
+
+      <!-- Constitutional Archive Management System -->
+      <div class="project-card" data-project="constitution-vault">
+        <div class="project-header">
+          <h3 class="project-title">
+            Constitutional Archive Management System
+          </h3>
+          <span class="project-icon">📚</span>
+        </div>
+        <p>
+          A full-stack web application for managing and querying historical
+          constitutional data with admin portal for data upload and public
+          search interface with natural language processing.
+        </p>
+
+        <div class="project-tech">
+          <span class="tech-tag">Vanilla JS</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Azure</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">CI/CD</span>
+        </div>
+
+        <div class="project-links">
+          <a
+            href="https://github.com/ARTMashimbyi/-ConstitutionVault"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >GitHub</a
+          >
+          <a
+            href="https://delightful-pebble-09b2bca10.6.azurestaticapps.net/"
+            class="project-link"
+            onclick="event.stopPropagation()"
+            >Live Demo</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Experience Section -->
     <section class="experience" id="experience">
@@ -530,6 +582,12 @@
           </p>
         </div>
 
+        <div class="academic-controls">
+          <button id="toggleAcademic" class="academic-toggle">
+            View All Academic Foundation
+          </button>
+        </div>
+
         <div class="academic-grid">
           <!-- Basic Computer Organisation -->
           <div class="course-card">
@@ -556,6 +614,20 @@
                     floating-point representation (IEEE 754), data compression
                     algorithms
                   </li>
+                  <li>
+                    <strong>Digital Logic:</strong> Boolean algebra, logic
+                    gates, combinational circuits, sequential circuits,
+                    flip-flops
+                  </li>
+                  <li>
+                    <strong>Low-Level Programming:</strong> Pep-8 assembly
+                    language, machine language, addressing modes, instruction
+                    sets
+                  </li>
+                  <li>
+                    <strong>Operating Systems:</strong> Process management,
+                    memory allocation, paging, segmentation, virtual memory
+                  </li>
                 </ul>
               </div>
               <div class="learning-outcomes">
@@ -573,13 +645,102 @@
                     Convert between number systems and perform arithmetic in
                     different bases
                   </li>
+                  <li>
+                    Understand memory hierarchy and its impact on program
+                    performance
+                  </li>
+                  <li>
+                    Analyze operating system resource allocation strategies
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Hands-on experience with Pep-8 simulator for assembly
+                  programming, digital circuit design using logic gates, memory
+                  management simulation, and performance analysis of different
+                  caching strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Discrete Computational Structures -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3>Discrete Computational Structures</h3>
+              <div class="course-code">COMS1016A/1020A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Mathematical Logic:</strong> Propositional logic,
+                    predicate logic, logical equivalences, inference rules
+                  </li>
+                  <li>
+                    <strong>Proof Techniques:</strong> Direct proof, proof by
+                    contradiction, mathematical induction, strong induction
+                  </li>
+                  <li>
+                    <strong>Number Theory:</strong> Modular arithmetic, prime
+                    numbers, Euclidean algorithm, cryptographic applications
+                  </li>
+                  <li>
+                    <strong>Combinatorics:</strong> Counting principles,
+                    permutations, combinations, recurrence relations
+                  </li>
+                  <li>
+                    <strong>Automata Theory:</strong> Finite state machines,
+                    regular expressions, context-free grammars, Turing machines
+                  </li>
+                  <li>
+                    <strong>Computability:</strong> Decidability, halting
+                    problem, computational complexity classes
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Construct formal proofs using various mathematical proof
+                    techniques
+                  </li>
+                  <li>
+                    Apply combinatorial reasoning to solve complex counting
+                    problems
+                  </li>
+                  <li>
+                    Design finite state machines for pattern recognition and
+                    language processing
+                  </li>
+                  <li>
+                    Analyze algorithms using discrete mathematical concepts and
+                    complexity theory
+                  </li>
+                  <li>
+                    Understand the theoretical limits of computation and
+                    decidability
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Implementation of cryptographic algorithms using number
+                  theory, design of finite state machines for text processing,
+                  combinatorial algorithm implementation, and formal proof
+                  construction for algorithm correctness.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Data Structures & Algorithms -->
-          <div class="course-card">
+          <div class="course-card academic-hidden">
             <div class="course-header">
               <h3>Data Structures & Algorithms</h3>
               <div class="course-code">COMS1017A/1021A</div>
@@ -601,6 +762,18 @@
                     <strong>Graph Algorithms:</strong> Graph representations,
                     BFS, DFS, Dijkstra's algorithm, minimum spanning trees
                   </li>
+                  <li>
+                    <strong>Sorting Algorithms:</strong> Bubble sort, insertion
+                    sort, selection sort, merge sort, quick sort, heap sort
+                  </li>
+                  <li>
+                    <strong>Algorithm Analysis:</strong> Time complexity (Big O,
+                    Omega, Theta), space complexity, recurrence relations
+                  </li>
+                  <li>
+                    <strong>Advanced Topics:</strong> Dynamic programming,
+                    greedy algorithms, backtracking, divide and conquer
+                  </li>
                 </ul>
               </div>
               <div class="learning-outcomes">
@@ -618,13 +791,31 @@
                     Design algorithms using dynamic programming and greedy
                     approaches
                   </li>
+                  <li>
+                    Analyze algorithm complexity using formal mathematical
+                    methods
+                  </li>
+                  <li>
+                    Solve complex computational problems using appropriate
+                    algorithmic paradigms
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  C++ implementation of all major data structures, performance
+                  benchmarking of sorting algorithms, graph algorithm
+                  applications in pathfinding, dynamic programming solutions for
+                  optimization problems, and memory management in complex data
+                  structures.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Computer Networks -->
-          <div class="course-card">
+          <div class="course-card academic-hidden">
             <div class="course-header">
               <h3>Computer Networks</h3>
               <div class="course-code">COMS2014A</div>
@@ -645,6 +836,18 @@
                     <strong>Transport Layer:</strong> TCP congestion control,
                     flow control, UDP protocols, socket programming
                   </li>
+                  <li>
+                    <strong>Network Layer:</strong> IP addressing (IPv4/IPv6),
+                    routing algorithms, subnetting, NAT
+                  </li>
+                  <li>
+                    <strong>Link Layer:</strong> Ethernet, MAC addressing,
+                    switching, error detection and correction
+                  </li>
+                  <li>
+                    <strong>Network Security:</strong> Cryptography, SSL/TLS,
+                    firewalls, network attacks and defenses
+                  </li>
                 </ul>
               </div>
               <div class="learning-outcomes">
@@ -662,13 +865,30 @@
                     Configure network devices and understand routing protocol
                     operations
                   </li>
+                  <li>
+                    Implement secure communication protocols and understand
+                    cryptographic principles
+                  </li>
+                  <li>
+                    Optimize network performance through proper protocol
+                    selection and configuration
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Socket programming in Java/Python, network packet analysis
+                  using Wireshark, implementation of routing algorithms, network
+                  configuration and troubleshooting, and development of
+                  client-server applications with proper protocol handling.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Database Fundamentals -->
-          <div class="course-card">
+          <div class="course-card academic-hidden">
             <div class="course-header">
               <h3>Database Fundamentals</h3>
               <div class="course-code">COMS2002A</div>
@@ -687,8 +907,20 @@
                     joins, subqueries, views, stored procedures
                   </li>
                   <li>
+                    <strong>Relational Algebra:</strong> Selection, projection,
+                    join operations, set operations, division
+                  </li>
+                  <li>
                     <strong>Transaction Management:</strong> ACID properties,
                     concurrency control, locking protocols, recovery systems
+                  </li>
+                  <li>
+                    <strong>Advanced Topics:</strong> Query optimization,
+                    indexing strategies, database security, NoSQL concepts
+                  </li>
+                  <li>
+                    <strong>Database Administration:</strong> Backup strategies,
+                    performance tuning, user management
                   </li>
                 </ul>
               </div>
@@ -707,13 +939,104 @@
                     Implement transaction management with proper concurrency
                     control
                   </li>
+                  <li>
+                    Optimize database performance through indexing and query
+                    optimization
+                  </li>
+                  <li>
+                    Administer database systems including backup, recovery, and
+                    security management
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  MySQL/PostgreSQL database design and implementation, complex
+                  SQL query development, transaction processing implementation,
+                  database performance tuning, and integration of databases with
+                  application programming interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Computing -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Mobile Computing</h3>
+              <div class="course-code">Computer Science II</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Android Architecture:</strong> Activity lifecycle,
+                    intents, services, content providers, broadcast receivers
+                  </li>
+                  <li>
+                    <strong>UI/UX Design:</strong> Material Design principles,
+                    responsive layouts, fragment management, navigation patterns
+                  </li>
+                  <li>
+                    <strong>Data Management:</strong> SQLite databases, Room
+                    persistence library, shared preferences, file storage
+                  </li>
+                  <li>
+                    <strong>Networking:</strong> REST API integration, Retrofit
+                    library, JSON/XML parsing, offline capabilities
+                  </li>
+                  <li>
+                    <strong>Hardware Integration:</strong> Sensor data
+                    processing, camera integration, location services,
+                    Bluetooth
+                  </li>
+                  <li>
+                    <strong>Advanced Topics:</strong> Multithreading, background
+                    processing, notifications, app publishing
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Develop full-featured Android applications using Java and
+                    Android SDK
+                  </li>
+                  <li>
+                    Design intuitive user interfaces following Material Design
+                    guidelines
+                  </li>
+                  <li>
+                    Implement robust data persistence and synchronization
+                    strategies
+                  </li>
+                  <li>
+                    Integrate device hardware features and external APIs into
+                    mobile applications
+                  </li>
+                  <li>
+                    Optimize mobile applications for performance, battery life,
+                    and user experience
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Java-based Android application development, RESTful API
+                  integration using Retrofit, SQLite database management with
+                  Room, sensor data processing implementation, and
+                  publication-ready application deployment to Google Play Store.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Advanced Analysis of Algorithms -->
-          <div class="course-card">
+          <div class="course-card academic-hidden">
             <div class="course-header">
               <h3>Advanced Analysis of Algorithms</h3>
               <div class="course-code">COMS2015A</div>
@@ -734,6 +1057,18 @@
                     <strong>Graph Algorithms:</strong> Maximum flow, minimum
                     cut, matching algorithms, planar graph algorithms
                   </li>
+                  <li>
+                    <strong>Computational Geometry:</strong> Convex hull
+                    algorithms, line segment intersection, Voronoi diagrams
+                  </li>
+                  <li>
+                    <strong>Approximation Algorithms:</strong> Performance
+                    guarantees, PTAS, FPTAS, inapproximability results
+                  </li>
+                  <li>
+                    <strong>Randomized Algorithms:</strong> Probabilistic
+                    analysis, randomized data structures, Monte Carlo methods
+                  </li>
                 </ul>
               </div>
               <div class="learning-outcomes">
@@ -750,13 +1085,254 @@
                     Implement approximation algorithms with proven performance
                     bounds
                   </li>
+                  <li>
+                    Solve geometric computation problems using efficient
+                    algorithms
+                  </li>
+                  <li>
+                    Apply randomized algorithms for optimization and search
+                    problems
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Implementation of complex graph algorithms, dynamic
+                  programming solutions for optimization, computational geometry
+                  algorithms in C++, NP-completeness proofs, and performance
+                  analysis of approximation algorithms.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parallel Computing -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Parallel Computing</h3>
+              <div class="course-code">COMS3008A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Parallel Architectures:</strong> SIMD, MIMD, shared
+                    memory, distributed memory, GPU architectures
+                  </li>
+                  <li>
+                    <strong>Parallel Programming Models:</strong> OpenMP, MPI,
+                    CUDA, thread-based parallelism, task parallelism
+                  </li>
+                  <li>
+                    <strong>Synchronization:</strong> Locks, semaphores,
+                    monitors, barriers, atomic operations, deadlock prevention
+                  </li>
+                  <li>
+                    <strong>Performance Analysis:</strong> Speedup, efficiency,
+                    Amdahl's law, Gustafson's law, scalability analysis
+                  </li>
+                  <li>
+                    <strong>Parallel Algorithms:</strong> Parallel sorting,
+                    parallel search, matrix operations, graph algorithms
+                  </li>
+                  <li>
+                    <strong>Distributed Systems:</strong> Consensus algorithms,
+                    distributed coordination, fault tolerance
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design and implement parallel algorithms for multi-core and
+                    distributed systems
+                  </li>
+                  <li>
+                    Analyze parallel program performance and identify
+                    optimization opportunities
+                  </li>
+                  <li>
+                    Implement synchronization mechanisms to ensure correct
+                    concurrent execution
+                  </li>
+                  <li>
+                    Develop distributed applications using message passing
+                    interfaces
+                  </li>
+                  <li>
+                    Optimize computational workloads for parallel execution
+                    environments
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  OpenMP and MPI programming in C/C++, multi-threaded
+                  application development, parallel algorithm implementation,
+                  performance profiling of parallel applications, and
+                  distributed system simulation and testing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formal Languages & Automata -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Formal Languages & Automata</h3>
+              <div class="course-code">COMS3003A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Automata Theory:</strong> Finite automata
+                    (DFA/NFA), pushdown automata, Turing machines, linear
+                    bounded automata
+                  </li>
+                  <li>
+                    <strong>Formal Languages:</strong> Regular languages,
+                    context-free languages, context-sensitive languages,
+                    recursively enumerable languages
+                  </li>
+                  <li>
+                    <strong>Computability:</strong> Church-Turing thesis,
+                    decidable vs. undecidable problems, halting problem,
+                    reduction techniques
+                  </li>
+                  <li>
+                    <strong>Complexity Theory:</strong> Time and space
+                    complexity classes, hierarchy theorems, completeness,
+                    hardness
+                  </li>
+                  <li>
+                    <strong>Advanced Topics:</strong> Gödel's incompleteness
+                    theorems, recursive function theory, lambda calculus
+                  </li>
+                  <li>
+                    <strong>Applications:</strong> Compiler design, program
+                    verification, natural language processing
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design and analyze various types of automata for language
+                    recognition
+                  </li>
+                  <li>
+                    Prove properties of formal languages using pumping lemmas
+                    and closure properties
+                  </li>
+                  <li>
+                    Classify computational problems according to complexity and
+                    decidability
+                  </li>
+                  <li>
+                    Understand the theoretical foundations and limits of
+                    computation
+                  </li>
+                  <li>
+                    Apply formal language theory to practical computing problems
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Implementation of automata simulators, formal language
+                  processors, complexity analysis of algorithms, decidability
+                  proofs, and application of theoretical concepts to compiler
+                  design principles.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Design & Engineering -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Software Design & Engineering</h3>
+              <div class="course-code">Core Curriculum</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Software Methodologies:</strong> Agile (Scrum,
+                    Kanban), Waterfall, DevOps, CI/CD pipelines
+                  </li>
+                  <li>
+                    <strong>Design Principles:</strong> SOLID principles, DRY,
+                    YAGNI, design patterns (creational, structural, behavioral)
+                  </li>
+                  <li>
+                    <strong>Architecture Patterns:</strong> MVC, MVP, MVVM,
+                    microservices, monolithic, event-driven architecture
+                  </li>
+                  <li>
+                    <strong>Requirements Engineering:</strong> Use case
+                    modeling, user stories, acceptance criteria, requirement
+                    traceability
+                  </li>
+                  <li>
+                    <strong>Testing Strategies:</strong> Unit testing,
+                    integration testing, system testing, TDD, BDD, test
+                    automation
+                  </li>
+                  <li>
+                    <strong>Project Management:</strong> Risk management,
+                    quality assurance, configuration management, documentation
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Design software systems using appropriate architectural
+                    patterns and design principles
+                  </li>
+                  <li>
+                    Manage software projects using Agile methodologies and Scrum
+                    framework
+                  </li>
+                  <li>
+                    Implement comprehensive testing strategies throughout the
+                    development lifecycle
+                  </li>
+                  <li>
+                    Apply software engineering best practices for requirements
+                    analysis and system design
+                  </li>
+                  <li>
+                    Lead development teams effectively using modern software
+                    engineering practices
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Full-stack application development using design patterns,
+                  Agile project management implementation, automated testing
+                  framework setup, CI/CD pipeline configuration, and software
+                  architecture documentation and presentation.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Machine Learning -->
-          <div class="course-card">
+          <div class="course-card academic-hidden">
             <div class="course-header">
               <h3>Machine Learning</h3>
               <div class="course-code">COMS3007</div>
@@ -777,6 +1353,18 @@
                     <strong>Neural Networks:</strong> Perceptrons, multi-layer
                     networks, backpropagation, deep learning architectures
                   </li>
+                  <li>
+                    <strong>Model Evaluation:</strong> Cross-validation, ROC
+                    curves, precision-recall, bias-variance tradeoff
+                  </li>
+                  <li>
+                    <strong>Feature Engineering:</strong> Feature selection,
+                    dimensionality reduction, data preprocessing
+                  </li>
+                  <li>
+                    <strong>Advanced Topics:</strong> Reinforcement learning,
+                    natural language processing, computer vision applications
+                  </li>
                 </ul>
               </div>
               <div class="learning-outcomes">
@@ -794,7 +1382,165 @@
                     Design neural network architectures for specific problem
                     domains
                   </li>
+                  <li>
+                    Apply appropriate evaluation metrics and validation
+                    techniques
+                  </li>
+                  <li>
+                    Deploy machine learning models in practical applications
+                  </li>
                 </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Python programming with scikit-learn, TensorFlow, and PyTorch,
+                  data preprocessing and feature engineering pipelines, neural
+                  network implementation and training, model evaluation and
+                  hyperparameter tuning, and deployment of ML models in web
+                  applications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Operating Systems -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Operating Systems</h3>
+              <div class="course-code">COMS3010A</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Process Management:</strong> Process states, context
+                    switching, inter-process communication, synchronization
+                  </li>
+                  <li>
+                    <strong>Memory Management:</strong> Paging, segmentation,
+                    virtual memory, page replacement algorithms
+                  </li>
+                  <li>
+                    <strong>File Systems:</strong> File organization, directory
+                    structures, file allocation methods, journaling
+                  </li>
+                  <li>
+                    <strong>CPU Scheduling:</strong> Scheduling algorithms
+                    (FCFS, SJF, Round Robin, Priority), multi-level queues
+                  </li>
+                  <li>
+                    <strong>System Security:</strong> Access control,
+                    authentication, encryption, security models
+                  </li>
+                  <li>
+                    <strong>Distributed Systems:</strong> Distributed file
+                    systems, load balancing, fault tolerance, consensus
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>Design and implement core operating system components</li>
+                  <li>
+                    Analyze and compare different scheduling and memory
+                    management algorithms
+                  </li>
+                  <li>
+                    Implement synchronization mechanisms for concurrent
+                    processes
+                  </li>
+                  <li>
+                    Design secure system architectures with proper access
+                    control
+                  </li>
+                  <li>
+                    Understand distributed system principles and their
+                    implementation
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  Kernel module development in C, process scheduler
+                  implementation, memory management system simulation, file
+                  system design, and security mechanism implementation in
+                  operating system environments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Computer Graphics and Visualization -->
+          <div class="course-card academic-hidden">
+            <div class="course-header">
+              <h3>Computer Graphics and Visualization</h3>
+              <div class="course-code">Core Curriculum</div>
+            </div>
+            <div class="course-content">
+              <div class="course-topics">
+                <h4>Detailed Topics Covered:</h4>
+                <ul>
+                  <li>
+                    <strong>Graphics Pipeline:</strong> Rendering pipeline,
+                    transformation matrices, viewing transformations, projection
+                  </li>
+                  <li>
+                    <strong>3D Modeling:</strong> Polygon meshes, Bézier curves,
+                    B-splines, NURBS, surface modeling
+                  </li>
+                  <li>
+                    <strong>Rendering Techniques:</strong> Rasterization, ray
+                    tracing, shading models, texture mapping, anti-aliasing
+                  </li>
+                  <li>
+                    <strong>Animation:</strong> Keyframe animation, skeletal
+                    animation, physics-based animation, particle systems
+                  </li>
+                  <li>
+                    <strong>Visualization:</strong> Scientific visualization,
+                    information visualization, volume rendering, flow
+                    visualization
+                  </li>
+                  <li>
+                    <strong>Computational Geometry:</strong> Convex hull
+                    algorithms, spatial partitioning, collision detection
+                  </li>
+                </ul>
+              </div>
+              <div class="learning-outcomes">
+                <h4>Learning Outcomes:</h4>
+                <ul>
+                  <li>
+                    Implement 3D graphics algorithms and rendering techniques
+                  </li>
+                  <li>
+                    Design and create interactive visualizations for complex
+                    datasets
+                  </li>
+                  <li>
+                    Develop animation systems using various animation techniques
+                  </li>
+                  <li>
+                    Apply computational geometry algorithms to graphics problems
+                  </li>
+                  <li>
+                    Optimize graphics applications for performance and visual
+                    quality
+                  </li>
+                </ul>
+              </div>
+              <div class="technical-implementation">
+                <h4>Technical Implementation:</h4>
+                <p>
+                  OpenGL/WebGL programming, 3D graphics pipeline
+                  implementation, rendering algorithm development, animation
+                  system creation, and interactive visualization development
+                  using modern graphics libraries.
+                </p>
               </div>
             </div>
           </div>
@@ -838,8 +1584,6 @@
               <h3>GitHub</h3>
               <p>github.com/ARTMashimbyi</p>
             </a>
-
-            
 
             <a class="contact-item" href="CV.pdf" target="_blank">
               <div class="contact-icon">🧾</div>

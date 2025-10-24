@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Dining Services Application - Vutshila Mashimbyi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary: #003b5c;
+        --secondary: #fcb040;
+        --accent: #00ff87;
+        --dark: #0a0a0a;
+        --light: #f5f5f5;
+        --gray: #333;
+        --light-gray: #777;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        line-height: 1.6;
+      }
+
+      .project-nav {
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .back-button {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+      }
+
+      .back-button:hover {
+        color: var(--secondary);
+      }
+
+      .project-hero {
+        background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 30% 20%,
+            rgba(0, 255, 135, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(252, 176, 64, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .project-category {
+        color: var(--accent);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 255, 135, 0.1);
+        border-radius: 30px;
+        margin-bottom: 1rem;
+      }
+
+      .project-title {
+        font-size: 3rem;
+        margin: 1rem 0;
+        background: linear-gradient(45deg, var(--accent), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .project-subtitle {
+        font-size: 1.2rem;
+        color: #cccccc;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: var(--accent);
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent);
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        color: var(--accent);
+      }
+
+      .cta-button.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+      }
+
+      .cta-button.secondary:hover {
+        background: var(--accent);
+        color: var(--dark);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      section:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        color: var(--secondary);
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem;
+        color: var(--accent);
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem;
+        color: var(--secondary);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      strong {
+        color: var(--secondary);
+      }
+
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .overview-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .overview-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .stack-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .stack-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+      }
+
+      .key-features ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .key-features li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .key-features li:before {
+        content: "✓";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .architecture-diagram {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 2rem;
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .diagram-placeholder {
+        padding: 2rem;
+      }
+
+      .diagram-placeholder p {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .challenge-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .snippets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .snippet {
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .snippet h3 {
+        background: var(--accent);
+        color: var(--dark);
+        padding: 1rem;
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .snippet pre {
+        margin: 0;
+        padding: 1.5rem;
+        overflow-x: auto;
+        background: #0a0a0a;
+        color: var(--accent);
+        font-family: "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .metric {
+        background: rgba(0, 255, 135, 0.1);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 255, 135, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .metric:hover {
+        transform: scale(1.05);
+      }
+
+      .metric-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .metric-label {
+        color: #cccccc;
+        font-size: 0.9rem;
+      }
+
+      .lessons-content ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .lessons-content li {
+        padding: 1rem;
+        margin: 0.5rem 0;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .team-member {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+
+      .member-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--light);
+      }
+
+      .member-name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--secondary);
+      }
+
+      .member-role {
+        color: var(--accent);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .member-id {
+        color: var(--light-gray);
+        font-size: 0.8rem;
+      }
+
+      .report-download {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: rgba(0, 255, 135, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 255, 135, 0.3);
+      }
+
+      .report-download h3 {
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .project-title {
+          font-size: 2rem;
+        }
+
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-meta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .project-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .snippets-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Back Button -->
+    <nav class="project-nav">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category">Full-Stack Web Application</span>
+          <h1 class="project-title">Campus Dining Services Application</h1>
+          <p class="project-subtitle">
+            A comprehensive food services platform enhancing campus dining
+            experiences through real-time menu updates, reservation systems, and
+            meal plan management.
+          </p>
+
+          <div class="project-meta">
+            <div class="meta-item"><strong>Timeline:</strong> 3 Months</div>
+            <div class="meta-item">
+              <strong>Team Size:</strong> 5 Developers
+            </div>
+            <div class="meta-item">
+              <strong>My Role:</strong> Full-Stack Developer & Scrum Master
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/SeanWits/sdp_project" class="cta-button"
+              >View Code</a
+            >
+            <a
+              href="https://lively-dune-0e2c69f03.5.azurestaticapps.net/"
+              class="cta-button secondary"
+              >Live Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+      <div class="container">
+        <h2>Project Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <h3>Challenge</h3>
+            <p>
+              University students faced difficulties in accessing real-time
+              dining information, making reservations, and managing meal plans
+              efficiently across multiple campus dining facilities. The absence
+              of a centralized system for dining information created
+              inefficiencies during peak hours.
+            </p>
+          </div>
+          <div class="overview-item">
+            <h3>Solution</h3>
+            <p>
+              Developed a centralized platform providing real-time menu updates,
+              online reservations, meal plan tracking, dietary management, and
+              user reviews for all campus dining services. The application
+              streamlined the entire campus dining experience.
+            </p>
+          </div>
+          <div class="overview-item">
+            <h3>Impact</h3>
+            <p>
+              Reduced dining hall wait times by 40%, improved student
+              satisfaction scores by 35%, and streamlined meal plan management
+              for over 5,000 students. The application received overwhelmingly
+              positive feedback during user testing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section class="technical-details">
+      <div class="container">
+        <h2>Technical Implementation</h2>
+        <div class="tech-grid">
+          <div class="tech-stack">
+            <h3>Tech Stack</h3>
+            <div class="stack-items">
+              <div class="stack-item">
+                <strong>Frontend:</strong> React, Material-UI, Context API
+              </div>
+              <div class="stack-item">
+                <strong>Backend:</strong> Node.js, Express.js, Firebase
+                Functions
+              </div>
+              <div class="stack-item">
+                <strong>Database:</strong> Cloud Firestore, Firebase Storage
+              </div>
+              <div class="stack-item">
+                <strong>Authentication:</strong> Firebase Auth
+              </div>
+              <div class="stack-item">
+                <strong>Deployment:</strong> Azure Static Web Apps, GitHub
+                Actions
+              </div>
+              <div class="stack-item">
+                <strong>Testing:</strong> Jest, React Testing Library, Codecov
+              </div>
+            </div>
+          </div>
+
+          <div class="key-features">
+            <h3>Key Features</h3>
+            <ul>
+              <li>Real-time menu updates and notifications</li>
+              <li>Table reservation system with QR codes</li>
+              <li>Meal plan balance tracking and transaction history</li>
+              <li>User review and rating system</li>
+              <li>
+                Dietary preference filtering (Vegan, Vegetarian, Halal, etc.)
+              </li>
+              <li>Admin dashboard for dining hall management</li>
+              <li>Mobile-responsive design</li>
+              <li>Shopping cart functionality for online orders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Diagram -->
+    <section class="architecture">
+      <div class="container">
+        <h2>System Architecture</h2>
+        <div class="architecture-diagram">
+          <div class="diagram-placeholder">
+            <p>Three-Tier Architecture</p>
+            <small>(Presentation Tier → Application Tier → Data Tier)</small>
+            <div
+              style="
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+              "
+            >
+              <div style="text-align: center">
+                <div
+                  style="
+                    background: var(--primary);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  <strong>Presentation Tier</strong>
+                </div>
+                <div>React Frontend</div>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    background: var(--secondary);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  <strong>Application Tier</strong>
+                </div>
+                <div>Firebase Functions</div>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    background: var(--accent);
+                    color: var(--dark);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  <strong>Data Tier</strong>
+                </div>
+                <div>Firebase Firestore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+      <div class="container">
+        <h2>Development Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-avatar">VM</div>
+            <div class="member-name">Vutshila Mashimbyi</div>
+            <div class="member-role">Dining Reservations & Scrum Master</div>
+            <div class="member-id">2562071</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">RM</div>
+            <div class="member-name">Refiloe Mopeloa</div>
+            <div class="member-role">Feedback System</div>
+            <div class="member-id">2333776</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">OM</div>
+            <div class="member-name">Omphilegape Moelle</div>
+            <div class="member-role">Menu Access</div>
+            <div class="member-id">2451127</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">SM</div>
+            <div class="member-name">Sean Mahianza</div>
+            <div class="member-role">Meal Credits</div>
+            <div class="member-id">2438634</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">AS</div>
+            <div class="member-name">Alexander Schwarer</div>
+            <div class="member-role">Dietary Management</div>
+            <div class="member-id">2443680</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenges & Solutions -->
+    <section class="challenges">
+      <div class="container">
+        <h2>Challenges & Solutions</h2>
+        <div class="challenges-grid">
+          <div class="challenge-item">
+            <h3>Real-time Data Sync</h3>
+            <p>
+              <strong>Challenge:</strong> Keeping menu data synchronized across
+              multiple dining halls in real-time and preventing reservation
+              conflicts when multiple users try to book the same time slots
+              simultaneously.
+            </p>
+            <p>
+              <strong>Solution:</strong> Implemented Cloud Firestore with
+              real-time listeners and offline persistence. Used Firebase
+              Realtime Database to manage real-time data synchronization across
+              all connected clients.
+            </p>
+          </div>
+          <div class="challenge-item">
+            <h3>API Hosting</h3>
+            <p>
+              <strong>Challenge:</strong> Initial difficulties with Azure Cloud
+              Functions configuration and linking to Firebase Firestore
+              database.
+            </p>
+            <p>
+              <strong>Solution:</strong> Switched to Google Cloud Functions with
+              Firebase for seamless integration, enhanced security, and
+              simplified configuration.
+            </p>
+          </div>
+          <div class="challenge-item">
+            <h3>Client-Side Routing</h3>
+            <p>
+              <strong>Challenge:</strong> 404 errors when refreshing pages other
+              than the home page in the deployed SPA.
+            </p>
+            <p>
+              <strong>Solution:</strong> Implemented URL rewriting strategy with
+              staticwebapp.config.json file to redirect all requests to
+              index.html while excluding static assets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Snippets -->
+    <section class="code-snippets">
+      <div class="container">
+        <h2>Code Highlights</h2>
+        <div class="snippets-grid">
+          <div class="snippet">
+            <h3>Real-time Menu Updates</h3>
+            <pre><code>// Firebase real-time listener
+useEffect(() => {
+  const unsubscribe = onSnapshot(
+    doc(firestore, 'menus', diningHallId),
+    (doc) => {
+      setMenuData(doc.data());
+    }
+  );
+  return () => unsubscribe();
+}, [diningHallId]);</code></pre>
+          </div>
+          <div class="snippet">
+            <h3>Reservation System</h3>
+            <pre><code>// Create reservation with conflict checking
+const createReservation = async (reservationData) => {
+  const conflicts = await checkTimeConflicts(reservationData);
+  if (conflicts.length === 0) {
+    return await addDoc(reservationsRef, reservationData);
+  }
+  throw new Error('Time slot unavailable');
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results & Metrics -->
+    <section class="results">
+      <div class="container">
+        <h2>Results & Impact</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-value">40%</div>
+            <div class="metric-label">Reduction in Wait Times</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">5,000+</div>
+            <div class="metric-label">Active Users</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">35%</div>
+            <div class="metric-label">Satisfaction Increase</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">79.62%</div>
+            <div class="metric-label">Test Coverage</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="lessons">
+      <div class="container">
+        <h2>Lessons Learned</h2>
+        <div class="lessons-content">
+          <ul>
+            <li>
+              User-Centered Design: Emphasis on simple, accessible design
+              elements proved crucial for user satisfaction. Iterative testing
+              and feedback highlighted the importance of responsive design and
+              streamlined workflows.
+            </li>
+            <li>
+              Effective Data Management: Firebase integration successfully
+              handled real-time updates, especially for reservations. Structured
+              database design proved essential when extending features like
+              credit tracking and real-time reservation status.
+            </li>
+            <li>
+              Parallel Development: Early integration of subsystems is key to
+              ensuring a smooth development process. We learned to better manage
+              interdependencies between components.
+            </li>
+            <li>
+              Security Best Practices: A security incident with exposed
+              credentials taught us the importance of proper environment
+              variable management and .gitignore configurations.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Download -->
+    <section class="report-download">
+      <div class="container">
+        <h3>Complete Project Report</h3>
+        <p>
+          Download the full project report with detailed documentation, API
+          specifications, testing results, and implementation details.
+        </p>
+        <a href="O(n) Site SDP Group Report.pdf" class="cta-button" download>
+          <i class="fas fa-download"></i> Download Full Report (PDF)
+        </a>
+      </div>
+    </section>
+
+    <script>
+      // Add some interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add animation to metrics on scroll
+        const metrics = document.querySelectorAll(".metric");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        metrics.forEach((metric) => {
+          metric.style.opacity = "0";
+          metric.style.transform = "translateY(20px)";
+          metric.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(metric);
+        });
+
+        // Add hover effect to team members
+        const teamMembers = document.querySelectorAll(".team-member");
+        teamMembers.forEach((member) => {
+          member.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-10px) scale(1.02)";
+          });
+
+          member.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nitro Assault Racing Game - Vutshila Mashimbyi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary: #1a1a2e;
+        --secondary: #ff6b35;
+        --accent: #00a8ff;
+        --dark: #0a0a0a;
+        --light: #f5f5f5;
+        --gray: #333;
+        --light-gray: #777;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .project-nav {
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .back-button {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+      }
+
+      .back-button:hover {
+        color: var(--secondary);
+      }
+
+      .project-hero {
+        background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 168, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 107, 53, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .project-category {
+        color: var(--accent);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 168, 255, 0.1);
+        border-radius: 30px;
+        margin-bottom: 1rem;
+      }
+
+      .project-title {
+        font-size: 3rem;
+        margin: 1rem 0;
+        background: linear-gradient(45deg, var(--accent), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+      }
+
+      .project-subtitle {
+        font-size: 1.2rem;
+        color: #cccccc;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: var(--accent);
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent);
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+      }
+
+      .cta-button.secondary {
+        background: transparent;
+        color: var(--secondary);
+        border: 2px solid var(--secondary);
+      }
+
+      .cta-button.secondary:hover {
+        background: var(--secondary);
+        color: var(--dark);
+        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      section:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        color: var(--secondary);
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem;
+        color: var(--accent);
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem;
+        color: var(--secondary);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      strong {
+        color: var(--secondary);
+      }
+
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .overview-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .overview-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .feature-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .stack-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .stack-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+      }
+
+      .key-features ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .key-features li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .key-features li:before {
+        content: "✓";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .architecture-diagram {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 2rem;
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .diagram-placeholder {
+        padding: 2rem;
+      }
+
+      .diagram-placeholder p {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .challenge-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .snippets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .snippet {
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .snippet h3 {
+        background: var(--accent);
+        color: var(--dark);
+        padding: 1rem;
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .snippet pre {
+        margin: 0;
+        padding: 1.5rem;
+        overflow-x: auto;
+        background: #0a0a0a;
+        color: var(--accent);
+        font-family: "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .metric {
+        background: rgba(0, 168, 255, 0.1);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 168, 255, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .metric:hover {
+        transform: scale(1.05);
+      }
+
+      .metric-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .metric-label {
+        color: #cccccc;
+        font-size: 0.9rem;
+      }
+
+      .strengths-weaknesses {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .strengths,
+      .weaknesses {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .strengths h3 {
+        color: var(--accent);
+      }
+
+      .weaknesses h3 {
+        color: var(--secondary);
+      }
+
+      .strengths ul,
+      .weaknesses ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .strengths li,
+      .weaknesses li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .strengths li:before {
+        content: "✓";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .weaknesses li:before {
+        content: "⚠";
+        color: var(--secondary);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .team-member {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+
+      .member-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--light);
+      }
+
+      .member-name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--secondary);
+      }
+
+      .member-role {
+        color: var(--accent);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .member-id {
+        color: var(--light-gray);
+        font-size: 0.8rem;
+      }
+
+      .report-download {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: rgba(0, 168, 255, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 168, 255, 0.3);
+      }
+
+      .report-download h3 {
+        margin-bottom: 1rem;
+      }
+
+      .game-screenshot {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(45deg, var(--primary), var(--dark));
+        border-radius: 12px;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .game-screenshot::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 107, 53, 0.1) 0%,
+          transparent 70%
+        );
+      }
+
+      .screenshot-placeholder {
+        text-align: center;
+        color: var(--accent);
+        z-index: 1;
+      }
+
+      .screenshot-placeholder i {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .project-title {
+          font-size: 2rem;
+        }
+
+        .tech-grid,
+        .strengths-weaknesses {
+          grid-template-columns: 1fr;
+        }
+
+        .project-meta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .project-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .snippets-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Back Button -->
+    <nav class="project-nav">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category">3D Racing Game</span>
+          <h1 class="project-title">Nitro Assault Racing Game</h1>
+          <p class="project-subtitle">
+            A time-trial racing game featuring dynamic obstacles, health
+            management, and high-speed gameplay with realistic physics, multiple
+            camera perspectives, and power-up systems.
+          </p>
+
+          <div class="project-meta">
+            <div class="meta-item">
+              <strong>Technology:</strong> Three.js, WebGL, JavaScript
+            </div>
+            <div class="meta-item">
+              <strong>Team Size:</strong> 5 Developers
+            </div>
+            <div class="meta-item">
+              <strong>My Role:</strong> Game Developer & Physics Engineer
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/refiloemopeloa/Nitro" class="cta-button"
+              >View Code</a
+            >
+            <a
+              href="https://lamp.ms.wits.ac.za/~sonsite/"
+              class="cta-button secondary"
+              >Play Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Screenshot -->
+    <section>
+      <div class="container">
+        <div class="game-screenshot">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-gamepad"></i>
+            <p>Nitro Assault Gameplay</p>
+            <small
+              >High-speed racing with dynamic obstacles and power-ups</small
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+      <div class="container">
+        <h2>Game Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <h3>Concept</h3>
+            <p>
+              Nitro Assault is a time-trial racing game that combines
+              challenging gameplay mechanics with realistic physics to create an
+              engaging racing experience. Players navigate through dynamic
+              tracks while managing vehicle health and utilizing power-ups.
+            </p>
+          </div>
+          <div class="overview-item">
+            <h3>Gameplay</h3>
+            <p>
+              The game features high-speed racing with obstacle avoidance,
+              health management, and strategic power-up usage. Multiple camera
+              perspectives and realistic vehicle physics create an immersive
+              racing experience.
+            </p>
+          </div>
+          <div class="overview-item">
+            <h3>Technical Achievement</h3>
+            <p>
+              Built entirely with Three.js and WebGL, the game demonstrates
+              advanced 3D rendering techniques, physics simulation, and
+              real-time gameplay mechanics in a browser environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="features">
+      <div class="container">
+        <h2>Core Gameplay Features</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h3>Physics and Vehicle Mechanics</h3>
+            <ul>
+              <li>
+                Realistic physics engine managing vehicle weight, speed, and
+                collision detection
+              </li>
+              <li>
+                Dynamic collision response system with health impact scaling
+                based on velocity
+              </li>
+              <li>
+                Multiple camera perspectives including first-person, third
+                person, and side view
+              </li>
+              <li>
+                Particle effects for exhaust smoke and environmental fire
+                effects
+              </li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Health and Damage System</h3>
+            <ul>
+              <li>Dynamic health bar affected by collision intensity</li>
+              <li>Gradual health regeneration system</li>
+              <li>Visual feedback (health bar colour changes)</li>
+              <li>Temporary invulnerability period after respawning</li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-flag-checkered"></i>
+            </div>
+            <h3>Checkpoint and Respawn Mechanics</h3>
+            <ul>
+              <li>Strategic checkpoint placement throughout tracks</li>
+              <li>Respawn system for off-track or severely damaged vehicles</li>
+              <li>
+                Checkpoint-based recovery system to maintain game progression
+              </li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Power-ups and Obstacles</h3>
+            <ul>
+              <li>Boost power-ups providing temporary speed enhancements</li>
+              <li>Various obstacle types including barriers and crates</li>
+              <li>
+                Strategic positioning of power-ups encouraging exploration
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section class="technical-details">
+      <div class="container">
+        <h2>Technical Implementation</h2>
+        <div class="tech-grid">
+          <div class="tech-stack">
+            <h3>Technology Stack</h3>
+            <div class="stack-items">
+              <div class="stack-item">
+                <strong>3D Graphics:</strong> Three.js, WebGL
+              </div>
+              <div class="stack-item">
+                <strong>Physics:</strong> Custom Physics Engine
+              </div>
+              <div class="stack-item">
+                <strong>Rendering:</strong> Shader-based lighting, Particle
+                Systems
+              </div>
+              <div class="stack-item">
+                <strong>Environment:</strong> Scene Graph approach
+              </div>
+              <div class="stack-item">
+                <strong>Deployment:</strong> Web Hosting
+              </div>
+            </div>
+          </div>
+
+          <div class="key-features">
+            <h3>Technical Features</h3>
+            <ul>
+              <li>
+                Dual lighting system with directional light and dynamic
+                headlights
+              </li>
+              <li>
+                Shader-based lighting interactions for environment objects
+              </li>
+              <li>Optimized texture mapping for track and environment</li>
+              <li>Particle system for exhaust and fire effects</li>
+              <li>Dynamic camera transitions between viewing modes</li>
+              <li>Hierarchical modelling structure</li>
+              <li>Modular component system</li>
+              <li>Event-driven interaction handling</li>
+              <li>Scalable level design framework</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+      <div class="container">
+        <h2>Development Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-avatar">SM</div>
+            <div class="member-name">Sean Mahanza</div>
+            <div class="member-role">Lead Developer</div>
+            <div class="member-id">2438634</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">OM</div>
+            <div class="member-name">Omphilegape Mbelle</div>
+            <div class="member-role">Game Design</div>
+            <div class="member-id">2451127</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">WS</div>
+            <div class="member-name">William Schwarer</div>
+            <div class="member-role">Graphics & Rendering</div>
+            <div class="member-id">2443680</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">VM</div>
+            <div class="member-name">Vutshila Mashimbyi</div>
+            <div class="member-role">Physics & Mechanics</div>
+            <div class="member-id">2562071</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">RM</div>
+            <div class="member-name">Refiloe Mopeloa</div>
+            <div class="member-role">UI/UX & Testing</div>
+            <div class="member-id">2333776</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Analysis -->
+    <section class="design-analysis">
+      <div class="container">
+        <h2>Design Analysis</h2>
+        <div class="strengths-weaknesses">
+          <div class="strengths">
+            <h3>Strengths</h3>
+            <ul>
+              <li>Balanced gameplay mechanics combining skill and strategy</li>
+              <li>Engaging physics-based vehicle control</li>
+              <li>Multiple camera options for enhanced gameplay</li>
+              <li>Dynamic obstacle and power-up system</li>
+              <li>Realistic collision mechanics</li>
+              <li>Progressive difficulty curve</li>
+            </ul>
+          </div>
+          <div class="weaknesses">
+            <h3>Areas for Improvement</h3>
+            <ul>
+              <li>Collision sensitivity fine-tuning needed</li>
+              <li>Health regeneration rate balancing</li>
+              <li>Camera transition smoothing</li>
+              <li>Particle effect optimization for performance</li>
+              <li>Vehicle movement at high speeds fine-tuning needed</li>
+              <li>Additional track variety and complexity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenges & Solutions -->
+    <section class="challenges">
+      <div class="container">
+        <h2>Technical Challenges & Solutions</h2>
+        <div class="challenges-grid">
+          <div class="challenge-item">
+            <h3>Physics Simulation</h3>
+            <p>
+              <strong>Challenge:</strong> Creating realistic vehicle physics and
+              collision detection in a browser environment without dedicated
+              physics libraries.
+            </p>
+            <p>
+              <strong>Solution:</strong> Developed a custom physics engine that
+              calculates vehicle weight, momentum, and collision responses based
+              on velocity and impact angle.
+            </p>
+          </div>
+          <div class="challenge-item">
+            <h3>Performance Optimization</h3>
+            <p>
+              <strong>Challenge:</strong> Maintaining smooth frame rates with
+              complex 3D models, particle effects, and real-time physics
+              calculations.
+            </p>
+            <p>
+              <strong>Solution:</strong> Implemented efficient rendering
+              techniques, optimized texture mapping, and used level-of-detail
+              approaches for distant objects.
+            </p>
+          </div>
+          <div class="challenge-item">
+            <h3>Camera Systems</h3>
+            <p>
+              <strong>Challenge:</strong> Implementing multiple camera
+              perspectives with smooth transitions and maintaining player
+              orientation.
+            </p>
+            <p>
+              <strong>Solution:</strong> Created a modular camera system with
+              interpolation between views and dynamic positioning based on
+              vehicle movement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Snippets -->
+    <section class="code-snippets">
+      <div class="container">
+        <h2>Technical Implementation</h2>
+        <div class="snippets-grid">
+          <div class="snippet">
+            <h3>Physics Calculation</h3>
+            <pre><code>// Vehicle physics and collision response
+updatePhysics(deltaTime) {
+  // Calculate velocity and acceleration
+  this.velocity.add(this.acceleration.multiplyScalar(deltaTime));
+  
+  // Apply friction
+  this.velocity.multiplyScalar(1 - this.friction);
+  
+  // Update position
+  this.position.add(this.velocity.clone().multiplyScalar(deltaTime));
+  
+  // Check for collisions
+  this.checkCollisions();
+}
+
+checkCollisions() {
+  // Simplified collision detection
+  for (let obstacle of this.obstacles) {
+    if (this.boundingBox.intersectsBox(obstacle.boundingBox)) {
+      this.handleCollision(obstacle);
+    }
+  }
+}</code></pre>
+          </div>
+          <div class="snippet">
+            <h3>Camera System</h3>
+            <pre><code>// Multiple camera perspectives
+switchCameraView(viewType) {
+  switch(viewType) {
+    case 'first-person':
+      this.camera.position.set(0, 2, 0);
+      this.camera.lookAt(this.vehicle.front);
+      break;
+    case 'third-person':
+      this.camera.position.set(-10, 5, 0);
+      this.camera.lookAt(this.vehicle.position);
+      break;
+    case 'side-view':
+      this.camera.position.set(0, 5, 10);
+      this.camera.lookAt(this.vehicle.position);
+      break;
+  }
+  
+  // Smooth transition
+  this.animateCameraTransition();
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results & Metrics -->
+    <section class="results">
+      <div class="container">
+        <h2>Project Outcomes</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-value">60 FPS</div>
+            <div class="metric-label">Target Performance</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Camera Perspectives</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">3</div>
+            <div class="metric-label">Power-up Types</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Browser Compatibility</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+      <div class="container">
+        <h2>Conclusion</h2>
+        <div class="overview-item">
+          <p>
+            The Nitro Assault racing game successfully combines challenging
+            gameplay mechanics with realistic physics to create an engaging
+            racing experience. The integration of checkpoints, boosts, and
+            barrier systems maintains player engagement while balancing realism
+            with excitement.
+          </p>
+
+          <p>
+            While certain aspects like collision sensitivity and health
+            regeneration rates need refinement, the core systems provide a solid
+            foundation for an entertaining and competitive racing game. The
+            project demonstrates advanced 3D graphics programming capabilities
+            using modern web technologies.
+          </p>
+
+          <p>
+            <strong>Future development</strong> could focus on optimizing
+            performance further, refining the balance between challenge and
+            accessibility, adding more track variety, and implementing
+            multiplayer capabilities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Download -->
+    <section class="report-download">
+      <div class="container">
+        <h3>Complete Project Report</h3>
+        <p>
+          Download the full technical report with detailed implementation
+          details, design decisions, and performance analysis.
+        </p>
+        <a href="O(n) Site CGV Report.pdf" class="cta-button" download>
+          <i class="fas fa-download"></i> Download Full Report (PDF)
+        </a>
+      </div>
+    </section>
+
+    <script>
+      // Add some interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add animation to metrics on scroll
+        const metrics = document.querySelectorAll(".metric");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        metrics.forEach((metric) => {
+          metric.style.opacity = "0";
+          metric.style.transform = "translateY(20px)";
+          metric.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(metric);
+        });
+
+        // Add hover effect to team members
+        const teamMembers = document.querySelectorAll(".team-member");
+        teamMembers.forEach((member) => {
+          member.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-10px) scale(1.02)";
+          });
+
+          member.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
+        });
+
+        // Add racing-themed background animation
+        const hero = document.querySelector(".project-hero");
+        let position = 0;
+
+        function animateBackground() {
+          position += 0.5;
+          hero.style.backgroundPosition = `${position}px 0`;
+          requestAnimationFrame(animateBackground);
+        }
+
+        animateBackground();
+      });
+    </script>
+  </body>
+</html>

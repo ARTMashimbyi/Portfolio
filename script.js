@@ -390,3 +390,146 @@ function createMatrixRain() {
 
 // Uncomment to enable matrix rain effect
 // createMatrixRain();
+
+// Project card navigation
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    // Don't navigate if clicking on links inside the card
+    if (e.target.tagName === "A") {
+      return;
+    }
+
+    const projectId = card.getAttribute("data-project");
+    navigateToProject(projectId);
+  });
+
+  // Make the entire card clickable with cursor pointer
+  card.style.cursor = "pointer";
+});
+
+// Function to navigate to project detail page
+function navigateToProject(projectId) {
+  // Add a smooth transition effect before navigation
+  gsap.to(".project-card", {
+    opacity: 0,
+    y: 50,
+    duration: 0.5,
+    stagger: 0.1,
+    onComplete: () => {
+      // Navigate to the project detail page
+      window.location.href = `project-${projectId}.html`;
+    },
+  });
+}
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") return;
+
+    // Create ripple effect
+    const ripple = document.createElement("div");
+    ripple.className = "project-ripple";
+    ripple.style.cssText = `
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 255, 135, 0.3);
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    `;
+
+    const rect = card.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = size + "px";
+    ripple.style.left = x + "px";
+    ripple.style.top = y + "px";
+
+    card.style.position = "relative";
+    card.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  });
+});
+
+// Add this to your existing JavaScript file
+
+// Academic Foundation toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggleAcademic");
+  const hiddenCards = document.querySelectorAll(".academic-hidden");
+  let isExpanded = false;
+
+  if (toggleButton) {
+    toggleButton.addEventListener("click", function () {
+      isExpanded = !isExpanded;
+
+      hiddenCards.forEach((card) => {
+        if (isExpanded) {
+          card.classList.add("show");
+        } else {
+          card.classList.remove("show");
+        }
+      });
+
+      // Update button text
+      toggleButton.textContent = isExpanded
+        ? "Collapse Academic Foundation"
+        : "View All Academic Foundation";
+
+      // Smooth scroll to button if collapsing
+      if (!isExpanded) {
+        toggleButton.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }
+
+  // Enhanced project card hover functionality
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    // Add tooltip on hover
+    card.addEventListener("mouseenter", function () {
+      // Create tooltip if it doesn't exist
+      if (!this.querySelector(".project-tooltip")) {
+        const tooltip = document.createElement("div");
+        tooltip.className = "project-tooltip";
+        tooltip.textContent = "Click to view details";
+        tooltip.style.cssText = `
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-size: 0.8rem;
+          white-space: nowrap;
+          z-index: 10;
+          pointer-events: none;
+        `;
+        this.style.position = "relative";
+        this.appendChild(tooltip);
+      }
+    });
+
+    card.addEventListener("mouseleave", function () {
+      const tooltip = this.querySelector(".project-tooltip");
+      if (tooltip) {
+        tooltip.remove();
+      }
+    });
+
+    // Enhanced click functionality
+    card.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") return;
+
+      const projectId = this.getAttribute("data-project");
+    });
+  });
+});
